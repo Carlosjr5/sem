@@ -15,6 +15,7 @@
 ### Meeting times:
 
 **Monday - 10:30 UK Time**
+
 **Tuesday -  10:30 UK Time**
 
 ### Simple Rules:
