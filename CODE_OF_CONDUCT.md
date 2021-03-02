@@ -15,7 +15,7 @@
 **Monday - 10:30 UK Time
 **Tuesday -  10:30 UK Time
 
-	~~Simple Rules:~~
+###Simple Rules:
 
 *All team members are expected to attend every meeting. Meeting are held every Monday and Tuesday and have a duration of 2 hours. Meetings can be extended depending on the workload and the availability of group members. Meeting outside of meeting times is allowed but must be communicated to other team members to avoid disarray in code modification carried out in the additional meeting outside of meeting times.*
 
@@ -23,6 +23,6 @@
 
 #### Support must be given out to anyone confused or behind on what's happening in the group meeting or anything that he might have missed or might not been a part of. 
 
-## `CODE	BEYOND!`
+## `CODE BEYOND!`
 
 
