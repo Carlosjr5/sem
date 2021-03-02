@@ -1,4 +1,4 @@
-# As an HR advisor I want to view and employee's details so that the employee's promotion request can be supported. #6
+# As an HR advisor I want to view and employee's details so that the employee's promotion request can be supported.
 
 ## CHARACTERISTIC INFORMATION
 
@@ -15,7 +15,7 @@ Primary task.
 
 ### Preconditions
 
-We know the role.  Database contains employee´s promotion request.
+We know the role.  Database contains employee´s details.
 
 ### Success End Condition
 

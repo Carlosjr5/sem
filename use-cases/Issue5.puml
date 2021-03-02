@@ -8,7 +8,7 @@ rectangle "HR System" {
     usecase UC4 as "Get employee´s
     details"
 
-    usecase UCa as "Print salaries"
+    usecase UCa as "Print details"
 
     HR - UC4
     UC4 ..> UCa : include
