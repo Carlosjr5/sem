@@ -1,12 +1,11 @@
 package com.napier.sem;
 
-
 import java.sql.*;
 
-public class App {
-    public static void main(String args[])
+public class App
+{
+    public static void main(String[] args)
     {
-        //lol
         try
         {
             // Load Database driver
@@ -20,7 +19,7 @@ public class App {
 
         // Connection to the database
         Connection con = null;
-        int retries = 1000;
+        int retries = 100;
         for (int i = 0; i < retries; ++i)
         {
             System.out.println("Connecting to database...");
@@ -29,7 +28,7 @@ public class App {
                 // Wait a bit for db to start
                 Thread.sleep(30000);
                 // Connect to database
-                con = DriverManager.getConnection("jdbc:mysql://db:3306/employees?useSSL=false", "root", "example");
+                con = DriverManager.getConnection("jdbc:mysql://localhost:3306/world?allowPublicKeyRetrieval=true&useSSL=false", "root", "example");
                 System.out.println("Successfully connected");
                 // Wait a bit
                 Thread.sleep(10000);
