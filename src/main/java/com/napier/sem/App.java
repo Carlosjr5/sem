@@ -4,7 +4,7 @@ package com.napier.sem;
 import java.sql.*;
 
 
-
+//Main class for connecting to a local database
 public class App {
 
     /**
