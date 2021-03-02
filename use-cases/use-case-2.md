@@ -1,4 +1,4 @@
-# USE CASE: 2 As an HR advisor I want to produce a report on the salary of employees in a department so that I can support financial reporting of the organisation.
+# USE CASE: 2 As an HR advisor I want to produce a report on the salary of employees in a department.
 
 ## CHARACTERISTIC INFORMATION
 

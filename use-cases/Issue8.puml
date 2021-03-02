@@ -1,13 +1,11 @@
 @startuml
 'https://plantuml.com/sequence-diagram
-actor HR as "Department Manager"
+actor HR as "HR Advisor"
 
 rectangle Database
 
 rectangle "HR System" {
-    usecase UC4 as "Get salary in
-    manager's department"
-
+    usecase UC4 as "Delete an employee's information"
 
     usecase UCa as "Print salaries"
 
