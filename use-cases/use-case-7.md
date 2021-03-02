@@ -1,4 +1,4 @@
-# USE CASE: 5 As an HR advisor I want to update an employee's details
+# USE CASE: 7 As an HR advisor I want to update an employee's details
 
 ## CHARACTERISTIC INFORMATION
 
@@ -43,7 +43,7 @@ A request for employee refactoring is sent to HR.
 
 ## EXTENSIONS
 
-3. **Employee does not exist**:
+5. **Employee does not exist**:
     1. HR advisor finds that no such employee exists.
 
 ## SUB-VARIATIONS

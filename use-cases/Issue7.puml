@@ -1,0 +1,17 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+actor HR as "HR Advisor"
+
+rectangle Database
+
+rectangle "HR System" {
+    usecase UC4 as "Change employee details"
+
+    usecase UCa as "Current employee details"
+
+    HR - UC4
+    UC4 ..> UCa : include
+    UC4 - Database
+}
+
+@enduml
