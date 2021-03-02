@@ -7,10 +7,10 @@ rectangle Database
 rectangle "HR System" {
     usecase UC4 as "Delete an employee's information"
 
-    usecase UCa as "Print salaries"
+    usecase UCa as "data retention legislation"
 
     HR - UC4
-    UC4 ..> UCa : include
+    UC4 ..> UCa : Compliant with
     UC4 - Database
 }
 
