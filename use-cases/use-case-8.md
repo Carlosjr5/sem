@@ -1,10 +1,10 @@
-# USE CASE: 4 Produce a Report on the Salary of Employees of a Given Role
+# USE CASE: 8 Delete an employee's details
 
 ## CHARACTERISTIC INFORMATION
 
 ### Goal in Context
 
-As an *HR advisor* I want *to produce a report on the salary of employees of a given role* so that *I can support financial reporting of the organisation.*
+As an HR advisor I want to delete an employee's details so that the company is compliant with data retention legislation.
 
 ### Scope
 
@@ -16,15 +16,16 @@ Primary task.
 
 ### Preconditions
 
-We know the role.  Database contains current employee salary data.
+Database contains current employee data.
 
 ### Success End Condition
 
-A report is available for HR to provide to finance.
+Data is deleted successfully. 
+The company is compliant with data retention legislation.
 
 ### Failed End Condition
 
-No report is produced.
+No deletion is executed.
 
 ### Primary Actor
 
@@ -32,19 +33,17 @@ HR Advisor.
 
 ### Trigger
 
-A request for finance information is sent to HR.
+A request for employee's data deletion is sent to HR.
 
 ## MAIN SUCCESS SCENARIO
 
-1. Finance request salary information for a given role.
-2. HR advisor captures name of the role to get salary information for.
-3. HR advisor extracts current salary information of all employees of the given role.
-4. HR advisor provides report to finance.
+1. Finance request data deletion for a specific employee.
+2. HR advisor captures name or id of the specific employee.
+3. HR advisor deletes all the information of the employee.
 
 ## EXTENSIONS
 
-3. **Role does not exist**:
-    1. HR advisor informs finance no role exists.
+3. None
 
 ## SUB-VARIATIONS
 

@@ -1,10 +1,10 @@
-#As an HR advisor I want to add a new employee's details so that I can ensure the new employee is paid. #5
+# 5 As an HR advisor I want to add a new employee's details
 
 ## CHARACTERISTIC INFORMATION
 
 ### Goal in Context
 
-As an *HR advisor* I want *to add a new employee's* details so that I can ensure the new employee* is paid.*
+As an *HR advisor* I want *to add a new employee's* details so that I can *ensure the new employee is paid.*
 ### Scope
 
 Company.
@@ -15,15 +15,15 @@ Primary task.
 
 ### Preconditions
 
-We know the role.  Database contains current employee salary data.
+We are capable of adding new employee details.
 
 ### Success End Condition
 
-A report is available for HR to provide to finance.
+We have added details of a new employee successfully 
 
 ### Failed End Condition
 
-No report is produced.
+No details added.
 
 ### Primary Actor
 
@@ -31,19 +31,14 @@ HR Advisor.
 
 ### Trigger
 
-A request for finance information is sent to HR.
+A request for new employee is made.
 
 ## MAIN SUCCESS SCENARIO
 
-1. Finance request salary information for all employees.
-2. HR advisor captures all employees to get salary information for.
-3. HR advisor extracts current salary information of all employees.
-4. HR advisor provides report to finance.
+1. HR advisor request access to add new employee details.
+4. HR advisor adds new employee details.
 
 ## EXTENSIONS
-
-3. **No data**:
-    1. HR advisor informs finance no information exists.
 
 ## SUB-VARIATIONS
 
