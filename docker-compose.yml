@@ -4,10 +4,6 @@ services:
   app:
     build: .
 
-    # for debugging allows us to just repackage to get jar into docker app container
-    # Needs Removed for travis
-  #    volumes:
-  #    - .\target:/tmp
 
   # db is is db folder
   db:

@@ -15,7 +15,7 @@ Primary task.
 
 ### Preconditions
 
-We know the role.  Database contains employee´s details.
+Database contains employee´s details.
 
 ### Success End Condition
 

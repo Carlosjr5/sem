@@ -16,7 +16,7 @@ Primary task.
 
 ### Preconditions
 
-We know the role.  Database contains current employee salary data.
+Database contains current employee salary data.
 
 ### Success End Condition
 
