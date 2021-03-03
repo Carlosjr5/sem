@@ -78,7 +78,7 @@ public class App {
         // Create new Application
         App a = new App();
 
-        // Connect to database
+        // Connect to databas
         a.connect();
 
         // Disconnect from database
