@@ -1,8 +1,8 @@
-# USE CASE: 32 The top N populated countries in the world where N is provided by the user.
+# USE CASE: 34 All the countries in a continent organised by largest population to smallest.
 
 ### Goal in Context
 
-I want to find out *the top (number) populated countries in the world* where N is *provided by the user.*
+I want to find out *all the countries in a continent* organised by *largest population to smallest.*
 
 ### Scope
 
@@ -14,7 +14,7 @@ Primary task.
 
 ### Preconditions
 
-Database contains country data.
+Database contains countries data.
 
 ### Success End Condition
 
@@ -22,8 +22,7 @@ Report of countries names is produced.
 
 ### Failed End Condition
 
-No report of capital city names is produced.
-The number provided exceeds the number of countries.
+No report of country's names is produced.
 
 ### Primary Actor
 
@@ -31,7 +30,7 @@ Group 7
 
 ### Trigger
 
-A request for country names is sent out.
+A request for country's names is sent out.
 
 ## MAIN SUCCESS SCENARIO
 
@@ -48,4 +47,4 @@ None.
 
 ## SCHEDULE
 
-**DUE DATE**:4/4/2021 Release 1.0
+**DUE DATE**:6/4/2021 Release 1.0
