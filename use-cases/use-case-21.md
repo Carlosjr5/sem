@@ -1,9 +1,9 @@
-# USE CASE: 20 The top N populated cities in a district where N is provided by the user..
+# USE CASE: 21 The top N populated cities in a country where N is provided by the user.
 ## CHARACTERISTIC INFORMATION
 
 ### Goal in Context
 
-I want to *the top N populated cities in a district* where N is *provided by the user*.
+I want to *find out the top (number) populated cities in a country * where number is *provided by user*.
 
 ### Scope
 
@@ -27,7 +27,7 @@ No report of capital city names is produced.
 
 ### Primary Actor
 
-Group 7 
+Group 7
 
 ### Trigger
 
@@ -35,8 +35,8 @@ A request for capital city names in the world is sent out.
 
 ## MAIN SUCCESS SCENARIO
 
-1. Request for capital cities in world is sent out.
-2. we retrieve capital city list.
+1. Request for capital cities in country is sent out.
+2. We retrieve capital city list.
 3. List is sorted according to population size.
 4. Report is produced.
 
@@ -48,4 +48,4 @@ None.
 
 ## SCHEDULE
 
-**DUE DATE**: 20/3/2021 Release 1.0
+**DUE DATE**: 23/3/2021 Release 1.0
