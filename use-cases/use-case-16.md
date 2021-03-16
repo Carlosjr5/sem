@@ -40,10 +40,9 @@ A request for population data is sent to HR.
 3. A list of population numbers in cities is produced.
 4. Population numbers in cities are sorted in descending order.
 5. List size is cut out according to N.
-6. Report is produced
+6. Report is produced.
 
 ## EXTENSIONS
-
 
 ## SUB-VARIATIONS
 
