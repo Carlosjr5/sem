@@ -1,4 +1,4 @@
-# USE CASE: 22 The top N populated cities in a region.
+# USE CASE: 22 All the cities in a region organised by largest population to smallest.
 ## CHARACTERISTIC INFORMATION
 
 ### Goal in Context
