@@ -1,4 +1,4 @@
-# USE CASE: 12 The population of people, people living in cities, and people not living in cities in each region.
+# USE CASE: 12 The population of people, people living in cities, and people not living in cities.
 
 ## CHARACTERISTIC INFORMATION
 
@@ -16,16 +16,15 @@ Primary task.
 
 ### Preconditions
 
-Database contains current  data.
+Database contains current population data.
 
 ### Success End Condition
 
-Data is deleted successfully. 
-The company is compliant with data retention legislation.
+Report of people living in cities and outside of cities is produced.
 
-### Failed End Condition
+### Failed End Condition    
 
-No deletion is executed.
+No population report is produced.
 
 ### Primary Actor
 
@@ -33,17 +32,19 @@ HR Advisor.
 
 ### Trigger
 
-A request for employee's data deletion is sent to HR.
+A request for population data is sent to HR.
 
 ## MAIN SUCCESS SCENARIO
 
-1. Finance request data deletion for a specific employee.
-2. HR advisor captures name or id of the specific employee.
-3. HR advisor deletes all the information of the employee.
+1. Request for population data is sent out.
+2. HR advisor retrieves data for population numbers.
+3. A list of people living in cities, and not in cities is produced.
+4. List is sorted according to regions.
 
 ## EXTENSIONS
 
-3. None
+5. **No data**
+ Something is wrong with database.
 
 ## SUB-VARIATIONS
 
