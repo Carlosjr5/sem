@@ -1,10 +1,10 @@
-# USE CASE: 8 Delete an employee's details
+# USE CASE: 12 The population of people, people living in cities, and people not living in cities in each region.
 
 ## CHARACTERISTIC INFORMATION
 
 ### Goal in Context
 
-As an HR advisor I want to delete an employee's details so that the company is compliant with data retention legislation.
+As an *HR advisor* I want to *produce a report of the population of people in cities, and people not living in cities* in each *region*.
 
 ### Scope
 
@@ -16,7 +16,7 @@ Primary task.
 
 ### Preconditions
 
-Database contains current employee data.
+Database contains current  data.
 
 ### Success End Condition
 
