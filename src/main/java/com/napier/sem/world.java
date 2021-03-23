@@ -6,27 +6,27 @@ public class world {
         /**
          * ID Number
          */
-        public int ID;
+        public int id;
 
         /**
          *  Name
          */
-        public String Name;
+        public String name;
 
         /**
          * Country Code
          */
-        public String CountryCode;
+        public String countryCode;
 
         /**
          * Country District
          */
-        public String District;
+        public String district;
 
         /**
          * Employee's salary
          */
-        public String Population;
+        public String population;
 
 
     }
