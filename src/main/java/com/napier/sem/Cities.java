@@ -5,7 +5,7 @@ package com.napier.sem;
 
 
 
-public class world {
+public class Cities {
 
         // City Identification number
         public int id;
@@ -25,8 +25,8 @@ public class world {
 
 
         // world constructor init
-        public world() {}
-        public world (int id,String name,String countryCode,String district,int population)
+        public Cities() {}
+        public Cities(int id, String name, String countryCode, String district, int population)
         {
                 this.id=id;
                 this.name=name;
