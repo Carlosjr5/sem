@@ -97,18 +97,18 @@ public class App {
             // Create an SQL statement
             Statement stmt = con.createStatement();
             // Create string for SQL statement
-            String strSelect = "SELECT Name as 'City' FROM city ORDER BY Population DESC;";
+            String strSelect = "SELECT Name as 'City' FROM city;";
             // Execute SQL statement
             ResultSet rset = stmt.executeQuery(strSelect);
             // Extract city information
-            ArrayList<Cities> cities = new ArrayList<Cities>();
+            ArrayList<Cities> towns = new ArrayList<Cities>();
             while (rset.next())
             {
                 Cities city = new Cities();
-                city.name = rset.getString("Name");
-                cities.add(city);
+                city.name = rset.getString("name");
+                towns.add(city);
             }
-            return cities;
+            return towns;
         }
         catch (Exception e)
         {
