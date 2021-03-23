@@ -83,13 +83,14 @@ public class App {
         // Connect to databas
         a.connect();
 
-        ArrayList<Cities> employees = a.getAllCities();
+        //issue N35
+        a.printCountries(a.getCountryListByWorld());
 
         // Disconnect from database
         a.disconnect();
     }
 
-
+/*
     public ArrayList<Cities> getAllCities()
     {
         try
@@ -115,6 +116,61 @@ public class App {
             System.out.println(e.getMessage());
             System.out.println("Failed to get cities");
             return null;
+        }
+    }
+
+ */
+    public ArrayList<Country> getCountryListByWorld()
+    {
+
+        try
+    {
+        // Make string used for sql statement
+        String strSelect = "SELECT country.code, country.name, country.continent, country.region, country.population," +
+                " city.name as 'Capital' FROM country, city where country.capital = city.id ORDER BY Population DESC;";
+        PreparedStatement stmt = con.prepareStatement(strSelect);
+
+        // Execute SQL statement
+        ResultSet rset = stmt.executeQuery();
+
+
+        // Creating array list of class country
+        ArrayList<Country> countries  = new ArrayList<>();
+
+
+        // Check one is returned
+        while (rset.next())
+        {
+            Country cntr = new Country();
+            cntr.code = rset.getString("code");
+            cntr.name = rset.getString("name");
+            cntr.continent = rset.getString("continent");
+            cntr.region = rset.getString("region");
+            cntr.population = rset.getInt("population");
+            cntr.capital = rset.getString("capital");
+            countries.add(cntr);
+        }
+        return countries;
+    }
+    catch (Exception e)
+        {
+            System.out.println(e.getMessage());
+            return null;
+        }
+    }
+
+    public void printCountries(ArrayList<Country> countries)
+    {
+        // Spacing out data for user accessibility
+        System.out.println(String.format("%-20s %-50s %-20s %-35s %-15s %-15s",
+                "Country Code", "Country Name", "Country Continent", "Country Region", "Country Population", "Country Capital"));
+
+        for(Country country : countries)
+        {
+            String country_data =
+                    String.format("%-20s %-50s %-20s %-35s %-15s %-15s",
+                            country.code, country.name, country.continent, country.region, country.population, country.capital);
+            System.out.println(country_data);
         }
     }
 }
