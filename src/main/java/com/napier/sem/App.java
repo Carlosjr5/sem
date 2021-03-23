@@ -7,21 +7,6 @@ import java.sql.*;
 //Main class for connecting to a local database
 public class App {
 
-    public static void main(String args[])
-    {
-        // Create new Application
-        App a = new App();
-
-        // Connect to database
-        a.connect();
-
-        World count = a.getCountry(3952);
-
-        a.displayWorld(count);
-
-        // Disconnect from database
-        a.disconnect();
-    }
     /**
      * Connection to MySQL database.
      */
@@ -40,7 +25,7 @@ public class App {
         catch (ClassNotFoundException e)
         {
             System.out.println("Could not load SQL driver");
-            //System.exit(-1);
+            System.exit(-1);
         }
 
         int retries = 10;
@@ -68,56 +53,6 @@ public class App {
         }
     }
 
-    public World getCountry(int ID)
-    {
-        try
-        {
-            // Create an SQL statement
-
-            Statement stmt = con.createStatement();
-            // Create string for SQL statement
-            String strSelect =
-                             "SELECT id "
-                            + "FROM world "
-                            + "WHERE id = " + ID;
-            // Execute SQL statement
-            ResultSet rset = stmt.executeQuery(strSelect);
-            // Return new employee if valid.
-            // Check one is returned
-            if (rset.next())
-            {
-                World count = new World();
-                count.ID = rset.getInt("id");
-                count.Name = rset.getString("Name");
-                count.CountryCode = rset.getString("Country Code");
-                count.District = rset.getString("District");
-                count.Population = rset.getString("Population");
-                return count;
-            }
-            else
-                return null;
-        }
-        catch (Exception e)
-        {
-            System.out.println(e.getMessage());
-            System.out.println("Failed to get the world details");
-            return null;
-        }
-    }
-
-    public void displayWorld(World count)
-    {
-        if (count != null)
-        {
-            System.out.println(
-                                count.ID + " "
-                                + count.Name + " "
-                                + count.CountryCode + "\n"
-                                + count.District + "\n"
-                                + count.Population + "\n");
-        }
-    }
-
     /**
      * Disconnect from the MySQL database.
      */
@@ -137,4 +72,16 @@ public class App {
         }
     }
 
+
+    public static void main(String args[])
+    {
+        // Create new Application
+        App a = new App();
+
+        // Connect to databas
+        a.connect();
+
+        // Disconnect from database
+        a.disconnect();
+    }
 }
