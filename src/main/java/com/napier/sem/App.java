@@ -84,42 +84,16 @@ public class App {
         a.connect();
 
         //issue N35
-        a.printCountries(a.getCountryListByWorld());
+        //a.printCountries(a.getCountryListByWorld());
+
+        //issue N29
+        a.printCities(a.getCityListByWorld());
 
         // Disconnect from database
         a.disconnect();
     }
 
-/*
-    public ArrayList<Cities> getAllCities()
-    {
-        try
-        {
-            // Create an SQL statement
-            Statement stmt = con.createStatement();
-            // Create string for SQL statement
-            String strSelect = "SELECT Name as 'City' FROM city;";
-            // Execute SQL statement
-            ResultSet rset = stmt.executeQuery(strSelect);
-            // Extract city information
-            ArrayList<Cities> towns = new ArrayList<Cities>();
-            while (rset.next())
-            {
-                Cities city = new Cities();
-                city.name = rset.getString("name");
-                towns.add(city);
-            }
-            return towns;
-        }
-        catch (Exception e)
-        {
-            System.out.println(e.getMessage());
-            System.out.println("Failed to get cities");
-            return null;
-        }
-    }
 
- */
     public ArrayList<Country> getCountryListByWorld()
     {
 
@@ -159,6 +133,46 @@ public class App {
         }
     }
 
+    public ArrayList<Cities> getCityListByWorld()
+    {
+
+        try
+        {
+            // Make string used for sql statement
+            String strSelect = "SELECT city.id, city.name, city.countrycode, city.district, city.population FROM city ORDER BY Population DESC;";
+            PreparedStatement stmt = con.prepareStatement(strSelect);
+
+            // Execute SQL statement
+            ResultSet rset = stmt.executeQuery();
+
+
+            // Creating array list of class Cities
+            ArrayList<Cities> towns  = new ArrayList<>();
+
+
+            // Check one is returned
+            while (rset.next())
+            {
+                Cities city = new Cities();
+                city.id = rset.getInt("id");
+                city.name = rset.getString("name");
+                city.countryCode = rset.getString("countrycode");
+                city.district = rset.getString("district");
+                city.population = rset.getInt("population");
+                towns.add(city);
+            }
+
+            return towns;
+
+        }
+        catch (Exception e)
+        {
+            System.out.println(e.getMessage());
+            return null;
+        }
+    }
+
+
     public void printCountries(ArrayList<Country> countries)
     {
         // Spacing out data for user accessibility
@@ -171,6 +185,21 @@ public class App {
                     String.format("%-20s %-50s %-20s %-35s %-15s %-15s",
                             country.code, country.name, country.continent, country.region, country.population, country.capital);
             System.out.println(country_data);
+        }
+    }
+
+    public void printCities(ArrayList<Cities> cities)
+    {
+        // Spacing out data for user accessibility
+        System.out.println(String.format("%-10s %-35s %-20s %-25s %-15s",
+                "City ID", "City Name", "City Country Code", "City District", "City Population"));
+
+        for(Cities city : cities)
+        {
+            String city_data =
+                    String.format("%-10s %-35s %-20s %-25s %-15s",
+                            city.id, city.name, city.countryCode, city.district, city.population);
+            System.out.println(city_data);
         }
     }
 }
