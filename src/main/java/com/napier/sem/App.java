@@ -115,9 +115,10 @@ public class App {
         //a.printCities(a.getCityListByRegion("Caribbean"));
 
         //issue N26
-        a.printCities(a.getCityListByCountry("Argentina"));
+        //a.printCities(a.getCityListByCountry("Argentina"));
 
         //issue N25
+        a.printCities(a.getCityListByDistrict("Burgas"));
 
         //issue N24
 
@@ -438,6 +439,54 @@ public class App {
                 city.population = rset.getInt("population");
                 cntr.name = rset.getString("country.name");
                 if (cntr.name.equals(cnt))
+                {
+                    towns.add(city);
+                }
+            }
+
+            return towns;
+
+        }
+        catch (Exception e)
+        {
+            System.out.println(e.getMessage());
+            return null;
+        }
+    }
+
+
+    /**
+     * Get all cities in district
+     */
+    public ArrayList<Cities> getCityListByDistrict(String district)
+    {
+
+        try
+        {
+            // Make string used for sql statement
+            String strSelect = "SELECT city.id, city.name, city.countrycode, city.district, city.population " +
+                    "FROM city ORDER BY Population DESC;";
+            PreparedStatement stmt = con.prepareStatement(strSelect);
+
+            // Execute SQL statement
+            ResultSet rset = stmt.executeQuery();
+
+
+            // Creating array list of class Cities
+            ArrayList<Cities> towns  = new ArrayList<>();
+
+
+            // Check one is returned
+            while (rset.next())
+            {
+                Cities city = new Cities();
+                Country cntr = new Country();
+                city.id = rset.getInt("id");
+                city.name = rset.getString("name");
+                city.countryCode = rset.getString("countrycode");
+                city.district = rset.getString("district");
+                city.population = rset.getInt("population");
+                if (city.district.equals(district))
                 {
                     towns.add(city);
                 }
