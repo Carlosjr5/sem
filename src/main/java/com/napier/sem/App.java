@@ -267,6 +267,11 @@ public class App {
 
     public void printCountries(ArrayList<Country> countries)
     {
+        if (countries == null)
+        {
+            System.out.println("No countries");
+            return;
+        }
         // Spacing out data for user accessibility
         System.out.println(String.format("%-20s %-50s %-20s %-35s %-15s %-15s",
                 "Country Code", "Country Name", "Country Continent", "Country Region", "Country Population", "Country Capital"));

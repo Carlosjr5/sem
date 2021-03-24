@@ -21,6 +21,6 @@ public class Issue34 {
     @Test
     void printSalariesTestNull()
     {
-        app.printSalaries(null);
+        app.printCountries(null);
     }
 }
