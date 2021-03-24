@@ -771,7 +771,7 @@ public class App {
         if (n >= 0)
         {
             System.out.println("N is negative or equal to 0");
-            return null
+            return null;
         }
         int x = 0;
         // Spacing out data for user accessibility
