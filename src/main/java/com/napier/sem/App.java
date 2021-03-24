@@ -94,7 +94,16 @@ public class App {
         //a.printCountriesByN(a.getCountryListByContinent("Europe"), 10);
 
         //issue N33
-        a.printCountries(a.getCountryListByRegion("Caribbean"));
+        //a.printCountries(a.getCountryListByRegion("Caribbean"));
+
+        //issue N32
+        //a.printCountriesByN(a.getCountryListByWorld(), 10);
+
+        //issue N31
+        //a.printCountriesByN(a.getCountryListByContinent("Europe"), 10);
+
+        //issue N30
+        a.printCountriesByN(a.getCountryListByRegion("Caribbean"), 5);
 
         //issue N29
         //a.printCities(a.getCityListByWorld());
@@ -123,8 +132,8 @@ public class App {
         try
     {
         // Make string used for sql statement
-        String strSelect = "SELECT country.code, country.name, country.continent, country.region, country.population," +
-                "FROM country ORDER BY Population DESC;";
+        String strSelect = "SELECT country.code, country.name, country.continent, country.region, country.population" +
+                " FROM country ORDER BY Population DESC;";
         PreparedStatement stmt = con.prepareStatement(strSelect);
 
         // Execute SQL statement
@@ -140,11 +149,10 @@ public class App {
         {
             Country cntr = new Country();
             cntr.code = rset.getString("code");
-            cntr.name = rset.getString("name");
             cntr.continent = rset.getString("continent");
             cntr.region = rset.getString("region");
             cntr.population = rset.getInt("population");
-            cntr.capital = rset.getString("capital");
+            cntr.name = rset.getString("name");
             countries.add(cntr);
         }
         return countries;
