@@ -87,7 +87,15 @@ public class App {
         //a.printCountries(a.getCountryListByWorld());
 
         //issue N29
-        a.printCities(a.getCityListByWorld());
+        //a.printCities(a.getCityListByWorld());
+
+        //issue N28
+        //a.printCities(a.getCityListByContinent("Europe"));
+
+        //issue N23
+        //a.printCitiesByN(a.getCityListByContinent("Europe"), 10);
+
+        //a.printCountries(a.getCountryListByContinent("Europe"));
 
         // Disconnect from database
         a.disconnect();
@@ -133,6 +141,45 @@ public class App {
         }
     }
 
+    public ArrayList<Country> getCountryListByContinent(String continent)
+    {
+
+        try
+        {
+            // Make string used for sql statement
+            String strSelect = "SELECT country.code, country.name, country.continent, country.region, country.population" +
+                    "FROM country, city WHERE country.continent = 'Europe' ORDER BY Population DESC;";
+            PreparedStatement stmt = con.prepareStatement(strSelect);
+
+            // Execute SQL statement
+            ResultSet rset = stmt.executeQuery();
+
+
+            // Creating array list of class country
+            ArrayList<Country> countries  = new ArrayList<>();
+
+
+            // Check one is returned
+            while (rset.next())
+            {
+                Country cntr = new Country();
+                cntr.code = rset.getString("code");
+                cntr.name = rset.getString("name");
+                cntr.continent = rset.getString("continent");
+                cntr.region = rset.getString("region");
+                cntr.population = rset.getInt("population");
+                cntr.capital = rset.getString("capital");
+                countries.add(cntr);
+            }
+            return countries;
+        }
+        catch (Exception e)
+        {
+            System.out.println(e.getMessage());
+            return null;
+        }
+    }
+
     public ArrayList<Cities> getCityListByWorld()
     {
 
@@ -160,6 +207,51 @@ public class App {
                 city.district = rset.getString("district");
                 city.population = rset.getInt("population");
                 towns.add(city);
+            }
+
+            return towns;
+
+        }
+        catch (Exception e)
+        {
+            System.out.println(e.getMessage());
+            return null;
+        }
+    }
+
+    public ArrayList<Cities> getCityListByContinent(String continent)
+    {
+
+        try
+        {
+            // Make string used for sql statement
+            String strSelect = "SELECT city.id, city.name, city.countrycode, city.district, city.population, country.code, country.continent " +
+                    "FROM city JOIN country ON city.countrycode = country.code ORDER BY Population DESC;";
+            PreparedStatement stmt = con.prepareStatement(strSelect);
+
+            // Execute SQL statement
+            ResultSet rset = stmt.executeQuery();
+
+
+            // Creating array list of class Cities
+            ArrayList<Cities> towns  = new ArrayList<>();
+
+
+            // Check one is returned
+            while (rset.next())
+            {
+                Cities city = new Cities();
+                Country cntr = new Country();
+                city.id = rset.getInt("id");
+                city.name = rset.getString("name");
+                city.countryCode = rset.getString("countrycode");
+                city.district = rset.getString("district");
+                city.population = rset.getInt("population");
+                cntr.continent = rset.getString("continent");
+                if (cntr.continent.equals(continent))
+                {
+                    towns.add(city);
+                }
             }
 
             return towns;
@@ -200,6 +292,32 @@ public class App {
                     String.format("%-10s %-35s %-20s %-25s %-15s",
                             city.id, city.name, city.countryCode, city.district, city.population);
             System.out.println(city_data);
+        }
+    }
+
+
+    public void printCitiesByN(ArrayList<Cities> cities, int n)
+    {
+        //declaring and init x as counter
+        int x = 0;
+
+        // Spacing out data for user accessibility
+        System.out.println(String.format("%-10s %-35s %-20s %-25s %-15s",
+                "City ID", "City Name", "City Country Code", "City District", "City Population"));
+
+        for(Cities city : cities)
+        {
+            String city_data =
+                    String.format("%-10s %-35s %-20s %-25s %-15s",
+                            city.id, city.name, city.countryCode, city.district, city.population);
+            System.out.println(city_data);
+
+            //Check if n is reached
+            x ++;
+            if (x == n)
+            {
+                break;
+            }
         }
     }
 }
