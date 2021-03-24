@@ -40,4 +40,4 @@ stages:
     if: branch = master
 
 after_success:
-  - bash <(curl -s https://codecov.io/gh/angeltenev/sem)
+  - bash <(curl -s https://codecov.io/bash)
