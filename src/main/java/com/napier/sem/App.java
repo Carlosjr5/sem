@@ -409,6 +409,11 @@ public class App {
             System.out.println("No countries");
             return;
         }
+        if (countries.isEmpty())
+        {
+            System.out.println("No countries! The list of countries is empty.");
+            return;
+        }
         // Spacing out data for user accessibility
         System.out.println(String.format("%-20s %-50s %-20s %-35s %-15s",
                 "Country Code", "Country Name", "Country Continent", "Country Region", "Country Population"));
@@ -431,6 +436,8 @@ public class App {
 
         for(Country country : countries)
         {
+            if (country == null)
+                continue;
             String country_data =
                     String.format("%-20s %-50s %-20s %-35s %-15s",
                             country.code, country.name, country.continent, country.region, country.population);
