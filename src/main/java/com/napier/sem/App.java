@@ -87,73 +87,73 @@ public class App {
         // Connect to databas
         a.connect();
 
-        //issue N35
+        //issue N35 - print all countries in world
         //a.printCountries(a.getCountryListByWorld());
 
-        //issue N34
+        //issue N34 - print countries by continent
         //a.printCountriesByN(a.getCountryListByContinent("Europe"), 10);
 
-        //issue N33
+        //issue N33 - print countries by region
         //a.printCountries(a.getCountryListByRegion("Caribbean"));
 
-        //issue N32
+        //issue N32 - print N of all countries in world
         //a.printCountriesByN(a.getCountryListByWorld(), 10);
 
-        //issue N31
+        //issue N31 - print n countries by continent
         //a.printCountriesByN(a.getCountryListByContinent("Europe"), 10);
 
-        //issue N30
+        //issue N30 - print n countries by region
         //a.printCountriesByN(a.getCountryListByRegion("Caribbean"), 5);
 
-        //issue N29
+        //issue N29 - print all cities in world
         //a.printCities(a.getCityListByWorld());
 
-        //issue N28
+        //issue N28 - print cities by continent
         //a.printCities(a.getCityListByContinent("Europe"));
 
-        //issue N27
+        //issue N27 - print cities by region
         //a.printCities(a.getCityListByRegion("Caribbean"));
 
-        //issue N26
+        //issue N26 - print cities by country
         //a.printCities(a.getCityListByCountry("Argentina"));
 
-        //issue N25
+        //issue N25 - print cities by district
         //a.printCities(a.getCityListByDistrict("Burgas"));
 
-        //issue N24
+        //issue N24 - print n of all cities in world
         //a.printCitiesByN(a.getCityListByWorld(), 10);
 
-        //issue N23
+        //issue N23 - print n cities by continent
         //a.printCitiesByN(a.getCityListByContinent("Europe"), 10);
 
-        //issue N22
+        //issue N22 - print n cities by region
         //a.printCitiesByN(a.getCityListByRegion("Caribbean"), 10);
 
-        //issue N21
+        //issue N21 - print n cities by country
         //a.printCitiesByN(a.getCityListByCountry("Bulgaria"), 10);
 
-        //issue N20
+        //issue N20 - print n cities by district
         //a.printCitiesByN(a.getCityListByDistrict("Burgas"), 10);
 
-        //issue N19
+        //issue N19 - print all capital cities in world
         //a.printCities(a.getCapitalListInWorld());
 
-        //issue N18
+        //issue N18 - print capital cities by continent
         //a.printCities(a.getCapitalListInContinent("Europe"));
 
-        //issue N17
+        //issue N17 - print capital cities by region
         //a.printCities(a.getCapitalListInRegion("Caribbean"));
 
-        //issue N16
+        //issue N16 - print n of all capital cities in world
         //a.printCitiesByN(a.getCapitalListInWorld(),10);
 
-        //issue N15
+        //issue N15 - print n capital cities in continent
         //a.printCitiesByN(a.getCapitalListInContinent("Europe"), 10);
 
-        //issue N14
+        //issue N14 - print n capital cities in region
         //a.printCitiesByN(a.getCapitalListInRegion("Caribbean"), 10);
 
-        //issue N13
+        //issue N13 - print number of people, number of people living in cities and number of people living outside of cities in each continent
         a.printPeople(a.getCityListByContinent("Europe"), a.getCountryListByContinent("Europe"));
 
         //issue N12
@@ -722,6 +722,9 @@ public class App {
     }
 
 
+    /**
+     * Print countries
+     */
     public void printCountries(ArrayList<Country> countries)
     {
         if (countries == null)
@@ -747,6 +750,10 @@ public class App {
         }
     }
 
+
+    /**
+     * Print set amount(n) of countries
+     */
     public void printCountriesByN(ArrayList<Country> countries, int n)
     {
         int x = 0;
@@ -771,6 +778,10 @@ public class App {
         }
     }
 
+
+    /**
+     * Print cities
+     */
     public void printCities(ArrayList<Cities> cities)
     {
         // Spacing out data for user accessibility
@@ -787,6 +798,9 @@ public class App {
     }
 
 
+    /**
+     * Print set amount(n) of cities
+     */
     public void printCitiesByN(ArrayList<Cities> cities, int n)
     {
         //declaring and init x as counter
@@ -813,6 +827,9 @@ public class App {
     }
 
 
+    /**
+     * Print amount of people, amount of people living in cities and amount of people living outside of cities
+     */
     public void printPeople(ArrayList<Cities> cities, ArrayList<Country> countries)
     {
 
