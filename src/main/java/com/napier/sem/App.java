@@ -764,16 +764,20 @@ public class App {
 
     /**
      * Print set amount(n) of countries
-     * @return
      */
-    public Country printCountriesByN(ArrayList<Country> countries, int n)
+    public void printCountriesByN(ArrayList<Country> countries)
     {
-        if (n >= 0)
+        if (countries == null)
         {
-            System.out.println("N is negative or equal to 0");
-            return null;
+            System.out.println("No countries By N");
+            return;
         }
-        int x = 0;
+        if (countries.isEmpty())
+        {
+            System.out.println("No countries by N! The list of country is empty.");
+            return;
+        }
+
         // Spacing out data for user accessibility
         System.out.println(String.format("%-20s %-50s %-20s %-35s %-15s",
                 "Country Code", "Country Name", "Country Continent", "Country Region", "Country Population"));
@@ -786,14 +790,7 @@ public class App {
                     String.format("%-20s %-50s %-20s %-35s %-15s",
                             country.code, country.name, country.continent, country.region, country.population);
             System.out.println(country_data);
-
-            x ++;
-            if (x == n)
-            {
-                break;
-            }
         }
-        return null;
     }
 
 

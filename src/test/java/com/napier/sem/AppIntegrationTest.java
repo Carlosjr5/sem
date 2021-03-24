@@ -19,13 +19,5 @@ public class AppIntegrationTest
         app.connect("localhost:33060");
     }
 
-    @Test
-    void testGetCountriesByN()
-    {
-        ArrayList<Country> countries = new ArrayList<Country>();
-        Country cntry = app.printCountriesByN(countries, 1);
-        assertEquals(cntry.name, "Aruba");
-        assertEquals(cntry.code, "ABW");
-        assertEquals(cntry.continent, "North America");
-    }
+
 }

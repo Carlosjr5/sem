@@ -46,7 +46,7 @@ public class TestPrintCities {
             Cities city1 = new Cities();
             city1.population = 701927;
             city1.countryCode = "ESP";
-            city1.district = "Andalusia";
+            city1.district = "Andalucia";
             city1.id = 656;
             city1.name = "Sevilla";
 
