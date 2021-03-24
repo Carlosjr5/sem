@@ -118,9 +118,10 @@ public class App {
         //a.printCities(a.getCityListByCountry("Argentina"));
 
         //issue N25
-        a.printCities(a.getCityListByDistrict("Burgas"));
+        //a.printCities(a.getCityListByDistrict("Burgas"));
 
         //issue N24
+        a.printCitiesByN(a.getCityListByWorld(),10);
 
         //issue N23
         //a.printCitiesByN(a.getCityListByContinent("Europe"), 10);
