@@ -85,7 +85,16 @@ public class App {
         App a = new App();
 
         // Connect to database
-        a.connect("localhost:33060");
+        if (args.length < 1)
+        {
+            a.connect("localhost:3306");
+        }
+        else
+        {
+            a.connect(args[0]);
+        }
+
+
 
         //issue N35 - print all countries in world
         //a.printCountries(a.getCountryListByWorld());
@@ -755,9 +764,15 @@ public class App {
 
     /**
      * Print set amount(n) of countries
+     * @return
      */
-    public void printCountriesByN(ArrayList<Country> countries, int n)
+    public Country printCountriesByN(ArrayList<Country> countries, int n)
     {
+        if (n >= 0)
+        {
+            System.out.println("N is negative or equal to 0");
+            return null
+        }
         int x = 0;
         // Spacing out data for user accessibility
         System.out.println(String.format("%-20s %-50s %-20s %-35s %-15s",
@@ -778,6 +793,7 @@ public class App {
                 break;
             }
         }
+        return null;
     }
 
 
