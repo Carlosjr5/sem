@@ -49,7 +49,6 @@ public class TestPrintCountries {
         cntry.continent = "Europe";
         cntry.region = "Bulgaria";
         cntry.surfaceArea = 12;
-        cntry.surfaceArea = 12;
         cntry.indepYear = 681;
         cntry.population = 7800000;
         cntry.lifeExpectancy = 81;

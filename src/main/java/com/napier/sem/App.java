@@ -17,12 +17,13 @@ public class App {
     /**
      * Connect to the MySQL database.
      */
-    public void connect()
+
+    public void connect(String location)
     {
         try
         {
             // Load Database driver
-            Class.forName("com.mysql.jdbc.Driver");
+            Class.forName("com.mysql.cj.jdbc.Driver");
         }
         catch (ClassNotFoundException e)
         {
@@ -39,7 +40,7 @@ public class App {
                 // Wait a bit for db to start
                 Thread.sleep(30000);
                 // Connect to database
-                con = DriverManager.getConnection("jdbc:mysql://db:3306/world?useSSL=false", "root", "example");
+                con = DriverManager.getConnection("jdbc:mysql://" + location + "/world?allowPublicKeyRetrieval=true&useSSL=false", "root", "example");
                 System.out.println("Successfully connected");
                 break;
             }
@@ -54,7 +55,6 @@ public class App {
             }
         }
     }
-
     /**
      * Disconnect from the MySQL database.
      */
@@ -84,8 +84,17 @@ public class App {
         // Create new Application
         App a = new App();
 
-        // Connect to databas
-        a.connect();
+        // Connect to database
+        if (args.length < 1)
+        {
+            a.connect("localhost:3306");
+        }
+        else
+        {
+            a.connect(args[0]);
+        }
+
+
 
         //issue N35 - print all countries in world
         //a.printCountries(a.getCountryListByWorld());
@@ -743,6 +752,8 @@ public class App {
 
         for(Country country : countries)
         {
+            if (country == null)
+                continue;
             String country_data =
                     String.format("%-20s %-50s %-20s %-35s %-15s",
                             country.code, country.name, country.continent, country.region, country.population);
@@ -753,9 +764,15 @@ public class App {
 
     /**
      * Print set amount(n) of countries
+     * @return
      */
-    public void printCountriesByN(ArrayList<Country> countries, int n)
+    public Country printCountriesByN(ArrayList<Country> countries, int n)
     {
+        if (n >= 0)
+        {
+            System.out.println("N is negative or equal to 0");
+            return null;
+        }
         int x = 0;
         // Spacing out data for user accessibility
         System.out.println(String.format("%-20s %-50s %-20s %-35s %-15s",
@@ -776,6 +793,7 @@ public class App {
                 break;
             }
         }
+        return null;
     }
 
 
