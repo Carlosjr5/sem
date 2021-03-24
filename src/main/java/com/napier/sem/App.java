@@ -3,20 +3,10 @@ package com.napier.sem;
 
 import java.sql.*;
 
-
-//Main class for connecting to a local database
 public class App {
-
-    /**
-     * Connection to MySQL database.
-     */
-    private Connection con = null;
-
-    /**
-     * Connect to the MySQL database.
-     */
-    public void connect()
+    public static void main(String args[])
     {
+        //lol
         try
         {
             // Load Database driver
@@ -28,7 +18,9 @@ public class App {
             System.exit(-1);
         }
 
-        int retries = 10;
+        // Connection to the database
+        Connection con = null;
+        int retries = 1000;
         for (int i = 0; i < retries; ++i)
         {
             System.out.println("Connecting to database...");
@@ -36,9 +28,13 @@ public class App {
             {
                 // Wait a bit for db to start
                 Thread.sleep(30000);
-                // Connect to database
-                con = DriverManager.getConnection("jdbc:mysql://db:3306/world?useSSL=false", "root", "example");
+                // Connect to databas
+                //con = DriverManager.getConnection("jdbc:mysql://db:3306/employees?useSSL=false", "root", "example");
+                con = DriverManager.getConnection("jdbc:mysql://localhost:33060/employees?useSSL=true", "root", "example");
                 System.out.println("Successfully connected");
+                // Wait a bit
+                Thread.sleep(10000);
+                // Exit for loop
                 break;
             }
             catch (SQLException sqle)
@@ -51,13 +47,7 @@ public class App {
                 System.out.println("Thread interrupted? Should not happen.");
             }
         }
-    }
 
-    /**
-     * Disconnect from the MySQL database.
-     */
-    public void disconnect()
-    {
         if (con != null)
         {
             try
@@ -70,19 +60,5 @@ public class App {
                 System.out.println("Error closing connection to database");
             }
         }
-    }
-
-
-
-    public static void main(String args[])
-    {
-        // Create new Application
-        App a = new App();
-
-        // Connect to databas
-        a.connect();
-
-        // Disconnect from database
-        a.disconnect();
     }
 }
