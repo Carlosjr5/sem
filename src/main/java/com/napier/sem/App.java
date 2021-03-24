@@ -103,13 +103,22 @@ public class App {
         //a.printCountriesByN(a.getCountryListByContinent("Europe"), 10);
 
         //issue N30
-        a.printCountriesByN(a.getCountryListByRegion("Caribbean"), 5);
+        //a.printCountriesByN(a.getCountryListByRegion("Caribbean"), 5);
 
         //issue N29
         //a.printCities(a.getCityListByWorld());
 
         //issue N28
         //a.printCities(a.getCityListByContinent("Europe"));
+
+        //issue N27
+        a.printCities(a.getCityListByRegion("Caribbean"));
+
+        //issue N26
+
+        //issue N25
+
+        //issue N24
 
         //issue N23
         //a.printCitiesByN(a.getCityListByContinent("Europe"), 10);
@@ -253,6 +262,10 @@ public class App {
         }
     }
 
+
+    /**
+     * Get all cities in world
+     */
     public ArrayList<Cities> getCityListByWorld()
     {
 
@@ -292,6 +305,10 @@ public class App {
         }
     }
 
+
+    /**
+     * Get all cities in continent
+     */
     public ArrayList<Cities> getCityListByContinent(String continent)
     {
 
@@ -338,6 +355,53 @@ public class App {
     }
 
 
+    /**
+     * Get all cities in region
+     */
+    public ArrayList<Cities> getCityListByRegion(String region)
+    {
+
+        try
+        {
+            // Make string used for sql statement
+            String strSelect = "SELECT city.id, city.name, city.countrycode, city.district, city.population, country.code, country.region " +
+                    "FROM city JOIN country ON city.countrycode = country.code ORDER BY Population DESC;";
+            PreparedStatement stmt = con.prepareStatement(strSelect);
+
+            // Execute SQL statement
+            ResultSet rset = stmt.executeQuery();
+
+
+            // Creating array list of class Cities
+            ArrayList<Cities> towns  = new ArrayList<>();
+
+
+            // Check one is returned
+            while (rset.next())
+            {
+                Cities city = new Cities();
+                Country cntr = new Country();
+                city.id = rset.getInt("id");
+                city.name = rset.getString("name");
+                city.countryCode = rset.getString("countrycode");
+                city.district = rset.getString("district");
+                city.population = rset.getInt("population");
+                cntr.region = rset.getString("region");
+                if (cntr.region.equals(region))
+                {
+                    towns.add(city);
+                }
+            }
+
+            return towns;
+
+        }
+        catch (Exception e)
+        {
+            System.out.println(e.getMessage());
+            return null;
+        }
+    }
     public void printCountries(ArrayList<Country> countries)
     {
         if (countries == null)
