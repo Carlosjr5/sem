@@ -121,13 +121,35 @@ public class App {
         //a.printCities(a.getCityListByDistrict("Burgas"));
 
         //issue N24
-        a.printCitiesByN(a.getCityListByWorld(),10);
+        //a.printCitiesByN(a.getCityListByWorld(),10);
 
         //issue N23
         //a.printCitiesByN(a.getCityListByContinent("Europe"), 10);
 
+        //issue N22
+        a.printCitiesByN(a.getCityListByRegion("Caribbean"),10);
 
-        //
+        //issue N21
+
+        //issue N20
+
+        //issue N19
+
+        //issue N18
+
+        //issue N17
+
+        //issue N16
+
+        //issue N15
+
+        //issue N14
+
+        //issue N13
+
+        //issue N12
+
+        //issue N11
 
         // Disconnect from database
         a.disconnect();
