@@ -816,6 +816,8 @@ public class App {
 
         for(Cities city : cities)
         {
+            if (city == null)
+                continue;
             String city_data =
                     String.format("%-10s %-35s %-20s %-25s %-15s",
                             city.id, city.name, city.countryCode, city.district, city.population);
