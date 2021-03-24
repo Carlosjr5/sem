@@ -37,7 +37,7 @@ public class App {
             try
             {
                 // Wait a bit for db to start
-                Thread.sleep(30000);
+                Thread.sleep(0);
                 // Connect to database
                 con = DriverManager.getConnection("jdbc:mysql://db:3306/world?useSSL=false", "root", "example");
                 System.out.println("Successfully connected");
@@ -112,9 +112,10 @@ public class App {
         //a.printCities(a.getCityListByContinent("Europe"));
 
         //issue N27
-        a.printCities(a.getCityListByRegion("Caribbean"));
+        //a.printCities(a.getCityListByRegion("Caribbean"));
 
         //issue N26
+        a.printCities(a.getCityListByCountry("Argentina"));
 
         //issue N25
 
@@ -402,6 +403,57 @@ public class App {
             return null;
         }
     }
+
+
+    /**
+     * Get all cities in country
+     */
+    public ArrayList<Cities> getCityListByCountry(String cnt)
+    {
+
+        try
+        {
+            // Make string used for sql statement
+            String strSelect = "SELECT city.id, city.name, city.countrycode, city.district, city.population, country.code, country.name " +
+                    "FROM city JOIN country ON city.countrycode = country.code ORDER BY Population DESC;";
+            PreparedStatement stmt = con.prepareStatement(strSelect);
+
+            // Execute SQL statement
+            ResultSet rset = stmt.executeQuery();
+
+
+            // Creating array list of class Cities
+            ArrayList<Cities> towns  = new ArrayList<>();
+
+
+            // Check one is returned
+            while (rset.next())
+            {
+                Cities city = new Cities();
+                Country cntr = new Country();
+                city.id = rset.getInt("id");
+                city.name = rset.getString("name");
+                city.countryCode = rset.getString("countrycode");
+                city.district = rset.getString("district");
+                city.population = rset.getInt("population");
+                cntr.name = rset.getString("country.name");
+                if (cntr.name.equals(cnt))
+                {
+                    towns.add(city);
+                }
+            }
+
+            return towns;
+
+        }
+        catch (Exception e)
+        {
+            System.out.println(e.getMessage());
+            return null;
+        }
+    }
+
+
     public void printCountries(ArrayList<Country> countries)
     {
         if (countries == null)
