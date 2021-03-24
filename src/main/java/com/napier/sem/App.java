@@ -139,9 +139,10 @@ public class App {
         //a.printCities(a.getCapitalListInWorld());
 
         //issue N18
-        a.printCities(a.getCapitalListInContinent("Europe"));
+        //a.printCities(a.getCapitalListInContinent("Europe"));
 
         //issue N17
+        a.printCities(a.getCapitalListInRegion("Caribbean"));
 
         //issue N16
 
@@ -607,6 +608,56 @@ public class App {
                 city.population = rset.getInt("population");
                 cntr.continent = rset.getString("continent");
                 if (cntr.continent.contains(continent))
+                {
+                    towns.add(city);
+                }
+
+            }
+
+            return towns;
+
+        }
+        catch (Exception e)
+        {
+            System.out.println(e.getMessage());
+            return null;
+        }
+    }
+
+
+    /**
+     * Get all capital cities in region
+     */
+    public ArrayList<Cities> getCapitalListInRegion(String region)
+    {
+
+        try
+        {
+            // Make string used for sql statement
+            String strSelect = "SELECT city.id, city.name, city.countrycode, city.district, city.population, country.region " +
+                    "FROM city JOIN country ON city.id = country.capital WHERE city.id = country.capital ORDER BY Population DESC;";
+            PreparedStatement stmt = con.prepareStatement(strSelect);
+
+            // Execute SQL statement
+            ResultSet rset = stmt.executeQuery();
+
+
+            // Creating array list of class Cities
+            ArrayList<Cities> towns  = new ArrayList<>();
+
+
+            // Check one is returned
+            while (rset.next())
+            {
+                Cities city = new Cities();
+                Country cntr = new Country();
+                city.id = rset.getInt("id");
+                city.name = rset.getString("name");
+                city.countryCode = rset.getString("countrycode");
+                city.district = rset.getString("district");
+                city.population = rset.getInt("population");
+                cntr.region = rset.getString("region");
+                if (cntr.region.contains(region))
                 {
                     towns.add(city);
                 }
