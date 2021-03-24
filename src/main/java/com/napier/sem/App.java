@@ -76,6 +76,10 @@ public class App {
 
 
 
+    /**
+     * Main function for start of application
+     * last edited by Angel Tenev at 1:04 AM 3.24.2021
+     */
     public static void main(String args[]) throws SQLException {
         // Create new Application
         App a = new App();
@@ -86,6 +90,21 @@ public class App {
         //issue N35
         //a.printCountries(a.getCountryListByWorld());
 
+        //issue N34
+        //a.printCountriesByN(a.getCountryListByContinent("Europe"), 10);
+
+        //issue N33
+        //a.printCountries(a.getCountryListByRegion("Caribbean"));
+
+        //issue N32
+        //a.printCountriesByN(a.getCountryListByWorld(), 10);
+
+        //issue N31
+        //a.printCountriesByN(a.getCountryListByContinent("Europe"), 10);
+
+        //issue N30
+        a.printCountriesByN(a.getCountryListByRegion("Caribbean"), 5);
+
         //issue N29
         //a.printCities(a.getCityListByWorld());
 
@@ -95,12 +114,17 @@ public class App {
         //issue N23
         //a.printCitiesByN(a.getCityListByContinent("Europe"), 10);
 
-        //a.printCountries(a.getCountryListByContinent("Europe"));
+
+        //
 
         // Disconnect from database
         a.disconnect();
     }
 
+
+    /**
+     * Get all countries in world
+     */
 
     public ArrayList<Country> getCountryListByWorld()
     {
@@ -108,8 +132,8 @@ public class App {
         try
     {
         // Make string used for sql statement
-        String strSelect = "SELECT country.code, country.name, country.continent, country.region, country.population," +
-                " city.name as 'Capital' FROM country, city where country.capital = city.id ORDER BY Population DESC;";
+        String strSelect = "SELECT country.code, country.name, country.continent, country.region, country.population" +
+                " FROM country ORDER BY Population DESC;";
         PreparedStatement stmt = con.prepareStatement(strSelect);
 
         // Execute SQL statement
@@ -125,11 +149,10 @@ public class App {
         {
             Country cntr = new Country();
             cntr.code = rset.getString("code");
-            cntr.name = rset.getString("name");
             cntr.continent = rset.getString("continent");
             cntr.region = rset.getString("region");
             cntr.population = rset.getInt("population");
-            cntr.capital = rset.getString("capital");
+            cntr.name = rset.getString("name");
             countries.add(cntr);
         }
         return countries;
@@ -141,6 +164,10 @@ public class App {
         }
     }
 
+
+    /**
+     * Get all countries in continent
+     */
     public ArrayList<Country> getCountryListByContinent(String continent)
     {
 
@@ -148,7 +175,7 @@ public class App {
         {
             // Make string used for sql statement
             String strSelect = "SELECT country.code, country.name, country.continent, country.region, country.population" +
-                    "FROM country, city WHERE country.continent = 'Europe' ORDER BY Population DESC;";
+                    " FROM country ORDER BY Population DESC;";
             PreparedStatement stmt = con.prepareStatement(strSelect);
 
             // Execute SQL statement
@@ -168,8 +195,54 @@ public class App {
                 cntr.continent = rset.getString("continent");
                 cntr.region = rset.getString("region");
                 cntr.population = rset.getInt("population");
-                cntr.capital = rset.getString("capital");
-                countries.add(cntr);
+                if (cntr.continent.contains(continent))
+                {
+                    countries.add(cntr);
+                }
+            }
+            return countries;
+        }
+        catch (Exception e)
+        {
+            System.out.println(e.getMessage());
+            return null;
+        }
+    }
+
+    /**
+     * Get all countries in region
+     */
+    public ArrayList<Country> getCountryListByRegion(String region)
+    {
+
+        try
+        {
+            // Make string used for sql statement
+            String strSelect = "SELECT country.code, country.name, country.continent, country.region, country.population" +
+                    " FROM country ORDER BY Population DESC;";
+            PreparedStatement stmt = con.prepareStatement(strSelect);
+
+            // Execute SQL statement
+            ResultSet rset = stmt.executeQuery();
+
+
+            // Creating array list of class country
+            ArrayList<Country> countries  = new ArrayList<>();
+
+
+            // Check one is returned
+            while (rset.next())
+            {
+                Country cntr = new Country();
+                cntr.code = rset.getString("code");
+                cntr.name = rset.getString("name");
+                cntr.continent = rset.getString("continent");
+                cntr.region = rset.getString("region");
+                cntr.population = rset.getInt("population");
+                if (cntr.region.equals(region))
+                {
+                    countries.add(cntr);
+                }
             }
             return countries;
         }
@@ -278,17 +351,39 @@ public class App {
             return;
         }
         // Spacing out data for user accessibility
-        System.out.println(String.format("%-20s %-50s %-20s %-35s %-15s %-15s",
-                "Country Code", "Country Name", "Country Continent", "Country Region", "Country Population", "Country Capital"));
+        System.out.println(String.format("%-20s %-50s %-20s %-35s %-15s",
+                "Country Code", "Country Name", "Country Continent", "Country Region", "Country Population"));
+
+        for(Country country : countries)
+        {
+            String country_data =
+                    String.format("%-20s %-50s %-20s %-35s %-15s",
+                            country.code, country.name, country.continent, country.region, country.population);
+            System.out.println(country_data);
+        }
+    }
+
+    public void printCountriesByN(ArrayList<Country> countries, int n)
+    {
+        int x = 0;
+        // Spacing out data for user accessibility
+        System.out.println(String.format("%-20s %-50s %-20s %-35s %-15s",
+                "Country Code", "Country Name", "Country Continent", "Country Region", "Country Population"));
 
         for(Country country : countries)
         {
             if (country == null)
                 continue;
             String country_data =
-                    String.format("%-20s %-50s %-20s %-35s %-15s %-15s",
-                            country.code, country.name, country.continent, country.region, country.population, country.capital);
+                    String.format("%-20s %-50s %-20s %-35s %-15s",
+                            country.code, country.name, country.continent, country.region, country.population);
             System.out.println(country_data);
+
+            x ++;
+            if (x == n)
+            {
+                break;
+            }
         }
     }
 
