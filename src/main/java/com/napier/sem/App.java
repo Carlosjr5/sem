@@ -76,6 +76,10 @@ public class App {
 
 
 
+    /**
+     * Main function for start of application
+     * last edited by Angel Tenev at 1:04 AM 3.24.2021
+     */
     public static void main(String args[]) throws SQLException {
         // Create new Application
         App a = new App();
@@ -88,6 +92,9 @@ public class App {
 
         //issue N34
         //a.printCountriesByN(a.getCountryListByContinent("Europe"), 10);
+
+        //issue N33
+        a.printCountries(a.getCountryListByRegion("Caribbean"));
 
         //issue N29
         //a.printCities(a.getCityListByWorld());
@@ -105,6 +112,10 @@ public class App {
         a.disconnect();
     }
 
+
+    /**
+     * Get all countries in world
+     */
 
     public ArrayList<Country> getCountryListByWorld()
     {
@@ -145,6 +156,10 @@ public class App {
         }
     }
 
+
+    /**
+     * Get all countries in continent
+     */
     public ArrayList<Country> getCountryListByContinent(String continent)
     {
 
@@ -173,6 +188,50 @@ public class App {
                 cntr.region = rset.getString("region");
                 cntr.population = rset.getInt("population");
                 if (cntr.continent.contains(continent))
+                {
+                    countries.add(cntr);
+                }
+            }
+            return countries;
+        }
+        catch (Exception e)
+        {
+            System.out.println(e.getMessage());
+            return null;
+        }
+    }
+
+    /**
+     * Get all countries in region
+     */
+    public ArrayList<Country> getCountryListByRegion(String region)
+    {
+
+        try
+        {
+            // Make string used for sql statement
+            String strSelect = "SELECT country.code, country.name, country.continent, country.region, country.population" +
+                    " FROM country ORDER BY Population DESC;";
+            PreparedStatement stmt = con.prepareStatement(strSelect);
+
+            // Execute SQL statement
+            ResultSet rset = stmt.executeQuery();
+
+
+            // Creating array list of class country
+            ArrayList<Country> countries  = new ArrayList<>();
+
+
+            // Check one is returned
+            while (rset.next())
+            {
+                Country cntr = new Country();
+                cntr.code = rset.getString("code");
+                cntr.name = rset.getString("name");
+                cntr.continent = rset.getString("continent");
+                cntr.region = rset.getString("region");
+                cntr.population = rset.getInt("population");
+                if (cntr.region.equals(region))
                 {
                     countries.add(cntr);
                 }
