@@ -78,7 +78,7 @@ public class App {
 
     /**
      * Main function for start of application
-     * last edited by Angel Tenev at 1:04 AM 3.24.2021
+     * last edited by Angel Tenev at 3:23 AM 3.24.2021
      */
     public static void main(String args[]) throws SQLException {
         // Create new Application
@@ -160,7 +160,7 @@ public class App {
         //a.printCitiesByN(a.getCapitalListInContinent("Europe"), 10);
 
         //issue N14 - print n capital cities in region
-        //a.printCitiesByN(a.getCapitalListInRegion("Caribbean"), 10);
+        a.printCitiesByN(a.getCapitalListInRegion("Caribbean"), 10);
 
         //issue N13 - print number of people, number of people living in cities and number of people living outside of cities in each continent
         a.printPeople(a.getCityListByContinent("Europe"), a.getCountryListByContinent("Europe"));
@@ -802,6 +802,17 @@ public class App {
      */
     public void printCities(ArrayList<Cities> cities)
     {
+
+        if (cities == null)
+        {
+            System.out.println("No cities");
+            return;
+        }
+        if (cities.isEmpty())
+        {
+            System.out.println("No cities! The list of cities is empty.");
+            return;
+        }
         // Spacing out data for user accessibility
         System.out.println(String.format("%-10s %-35s %-20s %-25s %-15s",
                 "City ID", "City Name", "City Country Code", "City District", "City Population"));
@@ -812,6 +823,7 @@ public class App {
                     String.format("%-10s %-35s %-20s %-25s %-15s",
                             city.id, city.name, city.countryCode, city.district, city.population);
             System.out.println(city_data);
+
         }
     }
 
