@@ -8,7 +8,7 @@ import org.junit.jupiter.api.TestInstance;
 
 import java.util.ArrayList;
 
-public class Issue34 {
+public class TestPrintCountries {
     static App app;
 
 
@@ -64,4 +64,6 @@ public class Issue34 {
         countries.add(cntry);
         app.printCountries(countries);
     }
+
+
 }
