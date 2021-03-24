@@ -142,13 +142,16 @@ public class App {
         //a.printCities(a.getCapitalListInContinent("Europe"));
 
         //issue N17
-        a.printCities(a.getCapitalListInRegion("Caribbean"));
+        //a.printCities(a.getCapitalListInRegion("Caribbean"));
 
         //issue N16
+        a.printCitiesByN(a.getCapitalListInWorld(),10);
 
         //issue N15
+        a.printCitiesByN(a.getCapitalListInContinent("Europe"), 10);
 
         //issue N14
+        a.printCitiesByN(a.getCapitalListInRegion("Caribbean"), 10);
 
         //issue N13
 
