@@ -23,10 +23,11 @@ public class AppIntegrationTest
     void testGetCountriesByN()
     {
         ArrayList<Country> countries = new ArrayList<Country>();
-        Country cntry = new Country();
-        cntry = app.printCountriesByN(countries, 1);
-        assertEquals(cntry.name, "Aruba");
-        assertEquals(cntry.code, "ABW");
-        assertEquals(cntry.continent, "North America");
+        countries = app.getCountryListByWorld();
+        assertEquals(countries.get(0).name, "China");
+        //assertEquals(cntry.code, "ABW");
+        //assertEquals(cntry.continent, "North America");
     }
+
+
 }
