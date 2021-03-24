@@ -37,7 +37,7 @@ public class App {
             try
             {
                 // Wait a bit for db to start
-                Thread.sleep(0);
+                Thread.sleep(30000);
                 // Connect to database
                 con = DriverManager.getConnection("jdbc:mysql://db:3306/world?useSSL=false", "root", "example");
                 System.out.println("Successfully connected");
@@ -145,15 +145,16 @@ public class App {
         //a.printCities(a.getCapitalListInRegion("Caribbean"));
 
         //issue N16
-        a.printCitiesByN(a.getCapitalListInWorld(),10);
+        //a.printCitiesByN(a.getCapitalListInWorld(),10);
 
         //issue N15
-        a.printCitiesByN(a.getCapitalListInContinent("Europe"), 10);
+        //a.printCitiesByN(a.getCapitalListInContinent("Europe"), 10);
 
         //issue N14
-        a.printCitiesByN(a.getCapitalListInRegion("Caribbean"), 10);
+        //a.printCitiesByN(a.getCapitalListInRegion("Caribbean"), 10);
 
         //issue N13
+        a.printPeople(a.getCityListByContinent("Europe"), a.getCountryListByContinent("Europe"));
 
         //issue N12
 
@@ -678,6 +679,49 @@ public class App {
     }
 
 
+    /**
+     * Get population by continent
+     */
+    public ArrayList<Country> getPopulationListByContinent(String continent)
+    {
+
+        try
+        {
+            // Make string used for sql statement
+            String strSelect = "SELECT city.id, city.name, city.countrycode, city.district, city.population, country.population, country.continent " +
+                    "FROM city JOIN country ON city.countrycode = country.code ORDER BY Population DESC;";
+            PreparedStatement stmt = con.prepareStatement(strSelect);
+
+            // Execute SQL statement
+            ResultSet rset = stmt.executeQuery();
+
+
+            // Creating array list of class country
+            ArrayList<Country> people  = new ArrayList<>();
+
+
+            // Check one is returned
+            while (rset.next())
+            {
+                Country person = new Country();
+                Cities city = new Cities();
+                person.population = rset.getInt("country.population");
+                city.population = rset.getInt("city.population");
+                if (person.continent.contains(continent))
+                {
+                    people.add(person);
+                }
+            }
+            return people;
+        }
+        catch (Exception e)
+        {
+            System.out.println(e.getMessage());
+            return null;
+        }
+    }
+
+
     public void printCountries(ArrayList<Country> countries)
     {
         if (countries == null)
@@ -766,5 +810,38 @@ public class App {
                 break;
             }
         }
+    }
+
+
+    public void printPeople(ArrayList<Cities> cities, ArrayList<Country> countries)
+    {
+
+        // counter for population size
+        int popCountCity = 0;
+        int popCountCntr = 0;
+        Country cont = new Country();
+
+        for(Cities city : cities)
+        {
+            popCountCity = popCountCity + city.population;
+        }
+
+        for(Country cntr : countries)
+        {
+            popCountCntr = popCountCntr + cntr.population;
+            cont.continent = cntr.continent;
+        }
+
+
+        // Spacing out data for user accessibility
+        System.out.println(String.format("%-25s %-25s %-25s %-25s",
+                "Total number of people", "People living in cities", "People not living in cities", "Continent"));
+
+
+
+            String populationData =
+                    String.format("%-25s %-25s %-25s %-25s",
+                            popCountCntr, popCountCity, popCountCntr-popCountCity, cont.continent);
+            System.out.println(populationData);
     }
 }
