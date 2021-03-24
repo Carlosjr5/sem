@@ -172,6 +172,7 @@ public class App {
                 cntr.continent = rset.getString("continent");
                 cntr.region = rset.getString("region");
                 cntr.population = rset.getInt("population");
+                //check if that is continent
                 if (cntr.continent.contains(continent))
                 {
                     countries.add(cntr);
