@@ -133,12 +133,13 @@ public class App {
         //a.printCitiesByN(a.getCityListByCountry("Bulgaria"), 10);
 
         //issue N20
-        a.printCitiesByN(a.getCityListByDistrict("Burgas"), 10);
+        //a.printCitiesByN(a.getCityListByDistrict("Burgas"), 10);
 
         //issue N19
-        a.printCities(a.getCapitalListInWorld());
+        //a.printCities(a.getCapitalListInWorld());
 
         //issue N18
+        a.printCities(a.getCapitalListInContinent("Europe"));
 
         //issue N17
 
@@ -553,13 +554,62 @@ public class App {
             while (rset.next())
             {
                 Cities city = new Cities();
-                Country cntr = new Country();
                 city.id = rset.getInt("id");
                 city.name = rset.getString("name");
                 city.countryCode = rset.getString("countrycode");
                 city.district = rset.getString("district");
                 city.population = rset.getInt("population");
                 towns.add(city);
+
+            }
+
+            return towns;
+
+        }
+        catch (Exception e)
+        {
+            System.out.println(e.getMessage());
+            return null;
+        }
+    }
+
+
+    /**
+     * Get all capital cities in continent
+     */
+    public ArrayList<Cities> getCapitalListInContinent(String continent)
+    {
+
+        try
+        {
+            // Make string used for sql statement
+            String strSelect = "SELECT city.id, city.name, city.countrycode, city.district, city.population, country.continent " +
+                    "FROM city JOIN country ON city.id = country.capital WHERE city.id = country.capital ORDER BY Population DESC;";
+            PreparedStatement stmt = con.prepareStatement(strSelect);
+
+            // Execute SQL statement
+            ResultSet rset = stmt.executeQuery();
+
+
+            // Creating array list of class Cities
+            ArrayList<Cities> towns  = new ArrayList<>();
+
+
+            // Check one is returned
+            while (rset.next())
+            {
+                Cities city = new Cities();
+                Country cntr = new Country();
+                city.id = rset.getInt("id");
+                city.name = rset.getString("name");
+                city.countryCode = rset.getString("countrycode");
+                city.district = rset.getString("district");
+                city.population = rset.getInt("population");
+                cntr.continent = rset.getString("continent");
+                if (cntr.continent.contains(continent))
+                {
+                    towns.add(city);
+                }
 
             }
 
