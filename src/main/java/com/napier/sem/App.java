@@ -127,9 +127,10 @@ public class App {
         //a.printCitiesByN(a.getCityListByContinent("Europe"), 10);
 
         //issue N22
-        a.printCitiesByN(a.getCityListByRegion("Caribbean"),10);
+        //a.printCitiesByN(a.getCityListByRegion("Caribbean"),10);
 
         //issue N21
+        a.printCitiesByN(a.getCityListByCountry("Bulgaria"),10);
 
         //issue N20
 
