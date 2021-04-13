@@ -895,3 +895,12 @@ public class App {
             System.out.println(populationData);
     }
 }
+
+/**
+ * include:
+ *           - stage: unit tests
+ *           install: skip
+ *           jdk: oraclejdk11
+ *           script: mvn test -Dtest=com.napier.sem.AppTest
+ *
+*/
