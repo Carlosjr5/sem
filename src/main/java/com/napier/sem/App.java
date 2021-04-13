@@ -6,6 +6,10 @@ import java.sql.*;
 import java.util.ArrayList;
 
 
+/**
+ * Main function for start of application
+ * last edited by Angel Tenev at 3:23 AM 3.24.2021
+ */
 //Main class for connecting to a local database
 public class App {
 
@@ -765,7 +769,7 @@ public class App {
     /**
      * Print set amount(n) of countries
      */
-    public void printCountriesByN(ArrayList<Country> countries)
+    public void printCountriesByN(ArrayList<Country> countries, int i)
     {
         if (countries == null)
         {
@@ -891,3 +895,12 @@ public class App {
             System.out.println(populationData);
     }
 }
+
+/**
+ * include:
+ *           - stage: unit tests
+ *           install: skip
+ *           jdk: oraclejdk11
+ *           script: mvn test -Dtest=com.napier.sem.AppTest
+ *
+*/
