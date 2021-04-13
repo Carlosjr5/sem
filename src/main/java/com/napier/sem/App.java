@@ -31,7 +31,6 @@ public class App {
             System.exit(-1);
         }
 
-        //test
         int retries = 10;
         for (int i = 0; i < retries; ++i)
         {
