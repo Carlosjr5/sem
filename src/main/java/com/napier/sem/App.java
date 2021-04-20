@@ -101,7 +101,7 @@ public class App {
 
 
         //issue N35 - print all countries in world
-        //a.printCountries(a.getCountryListByWorld());
+        a.printCountries(a.getCountryListByWorld());
 
         //issue N34 - print countries by continent
         //a.printCountriesByN(a.getCountryListByContinent("Europe"), 10);
@@ -164,10 +164,10 @@ public class App {
         //a.printCitiesByN(a.getCapitalListInContinent("Europe"), 10);
 
         //issue N14 - print n capital cities in region
-        a.printCitiesByN(a.getCapitalListInRegion("Caribbean"), 10);
+        //a.printCitiesByN(a.getCapitalListInRegion("Caribbean"), 10);
 
         //issue N13 - print number of people, number of people living in cities and number of people living outside of cities in each continent
-        a.printPeople(a.getCityListByContinent("Europe"), a.getCountryListByContinent("Europe"));
+        //a.printPeople(a.getCityListByContinent("Europe"), a.getCountryListByContinent("Europe"));
 
         //issue N12
 
@@ -781,6 +781,11 @@ public class App {
             System.out.println("No countries by N! The list of country is empty.");
             return;
         }
+        if (i <= 0)
+        {
+            System.out.println("Please specify positive integer!");
+            return;
+        }
 
         // Spacing out data for user accessibility
         System.out.println(String.format("%-20s %-50s %-20s %-35s %-15s",
@@ -836,6 +841,22 @@ public class App {
      */
     public void printCitiesByN(ArrayList<Cities> cities, int n)
     {
+        if (cities == null)
+        {
+            System.out.println("No cities");
+            return;
+        }
+        if (cities.isEmpty())
+        {
+            System.out.println("No cities! The list of cities is empty.");
+            return;
+        }
+
+        if (n <= 0)
+        {
+            System.out.println("Please specify positive integer!");
+            return;
+        }
         //declaring and init x as counter
         int x = 0;
 
@@ -845,6 +866,8 @@ public class App {
 
         for(Cities city : cities)
         {
+            if (city == null)
+                continue;
             String city_data =
                     String.format("%-10s %-35s %-20s %-25s %-15s",
                             city.id, city.name, city.countryCode, city.district, city.population);
@@ -865,6 +888,26 @@ public class App {
      */
     public void printPeople(ArrayList<Cities> cities, ArrayList<Country> countries)
     {
+        if (cities == null)
+        {
+            System.out.println("No cities");
+            return;
+        }
+        if (countries == null)
+        {
+            System.out.println("No countries");
+            return;
+        }
+        if (cities.isEmpty())
+        {
+            System.out.println("No cities! The list of cities is empty.");
+            return;
+        }
+        if (countries.isEmpty())
+        {
+            System.out.println("No countries! The list of countries is empty.");
+            return;
+        }
 
         // counter for population size
         int popCountCity = 0;
@@ -873,11 +916,15 @@ public class App {
 
         for(Cities city : cities)
         {
+            if (city == null)
+                continue;
             popCountCity = popCountCity + city.population;
         }
 
         for(Country cntr : countries)
         {
+            if (cntr == null)
+                continue;
             popCountCntr = popCountCntr + cntr.population;
             cont.continent = cntr.continent;
         }
@@ -893,6 +940,7 @@ public class App {
                     String.format("%-25s %-25s %-25s %-25s",
                             popCountCntr, popCountCity, popCountCntr-popCountCity, cont.continent);
             System.out.println(populationData);
+
     }
 }
 
