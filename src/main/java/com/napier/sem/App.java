@@ -35,14 +35,14 @@ public class App {
             System.exit(-1);
         }
 
-        int retries = 100;
+        int retries =30;
         for (int i = 0; i < retries; ++i)
         {
             System.out.println("Connecting to database...");
             try
             {
                 // Wait a bit for db to start
-                Thread.sleep(0);
+                Thread.sleep(30000);
                 // Connect to database
                 con = DriverManager.getConnection("jdbc:mysql://" + location + "/world?allowPublicKeyRetrieval=true&useSSL=false", "root", "example");
                 System.out.println("Successfully connected");
