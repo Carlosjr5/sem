@@ -18,8 +18,6 @@ before_script:
   - mvn clean
 
 jobs:
-
-
     - stage: integration tests
       jdk: oraclejdk11
       script: mvn test -Dtest=com.napier.sem.AppIntegrationTest

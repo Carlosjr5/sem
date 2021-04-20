@@ -101,7 +101,7 @@ public class App {
 
 
         //issue N35 - print all countries in world
-        //a.printCountries(a.getCountryListByWorld());
+        a.printCountries(a.getCountryListByWorld());
 
         //issue N34 - print countries by continent
         //a.printCountriesByN(a.getCountryListByContinent("Europe"), 10);
@@ -164,10 +164,10 @@ public class App {
         //a.printCitiesByN(a.getCapitalListInContinent("Europe"), 10);
 
         //issue N14 - print n capital cities in region
-        a.printCitiesByN(a.getCapitalListInRegion("Caribbean"), 10);
+        //a.printCitiesByN(a.getCapitalListInRegion("Caribbean"), 10);
 
         //issue N13 - print number of people, number of people living in cities and number of people living outside of cities in each continent
-        a.printPeople(a.getCityListByContinent("Europe"), a.getCountryListByContinent("Europe"));
+        //a.printPeople(a.getCityListByContinent("Europe"), a.getCountryListByContinent("Europe"));
 
         //issue N12
 
