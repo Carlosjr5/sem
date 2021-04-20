@@ -165,13 +165,14 @@ public class App {
         a.printPeopleInCitiesAndOutCitiesByContinent();
 
         //issue N12 - print number of people, living in cities and number of people living outside of cities in each region
-        //a.printPeopleInCitiesAndOutCitiesByRegion();
+        a.printPeopleInCitiesAndOutCitiesByRegion();
 
         //issue N11 - print number of people, living in cities and number of people living outside of cities in each country
-        //a.printPeopleInCitiesAndOutCitiesByCountry();
+        a.printPeopleInCitiesAndOutCitiesByCountry();
 
         //Print Regions - Feature added by Vesko - not in coursework requirements
         //a.printRegions(a.getRegionList());
+        //may not be included
 
         // Disconnect from database
         a.disconnect();
@@ -960,64 +961,8 @@ public class App {
 
 
     /**
-     * Print amount of people, amount of people living in cities and amount of people living outside of cities
+     * Print amount of people, amount of people living in cities and amount of people living outside of cities by continent
      */
-    public void printPeople(ArrayList<Cities> cities, ArrayList<Country> countries)
-    {
-        if (cities == null)
-        {
-            System.out.println("No cities");
-            return;
-        }
-        if (countries == null)
-        {
-            System.out.println("No countries");
-            return;
-        }
-        if (cities.isEmpty())
-        {
-            System.out.println("No cities! The list of cities is empty.");
-            return;
-        }
-        if (countries.isEmpty())
-        {
-            System.out.println("No countries! The list of countries is empty.");
-            return;
-        }
-
-        // counter for population size
-        int popCountCity = 0;
-        int popCountCntr = 0;
-        Country cont = new Country();
-
-        for(Cities city : cities)
-        {
-            if (city == null)
-                continue;
-            popCountCity = popCountCity + city.population;
-        }
-
-        for(Country cntr : countries)
-        {
-            if (cntr == null)
-                continue;
-            popCountCntr = popCountCntr + cntr.population;
-            cont.continent = cntr.continent;
-        }
-
-
-        // Spacing out data for user accessibility
-        System.out.println(String.format("%-25s %-25s %-25s %-25s",
-                "Total number of people", "People living in cities", "People not living in cities", "Continent"));
-
-
-
-            String populationData =
-                    String.format("%-25s %-25s %-25s %-25s",
-                            popCountCntr, popCountCity, popCountCntr-popCountCity, cont.continent);
-            System.out.println(populationData);
-
-    }
 
     public void printPeopleInCitiesAndOutCitiesByContinent(){
         ArrayList<Continent> continents = getContinentList();
@@ -1031,7 +976,7 @@ public class App {
                 for (Country country : countries) {
                     ArrayList<Cities> cities = getCityListByCountry(country.name);
                     int popCountInCity = 0;
-                    int popCountOutCity = 0;
+                    int popCountOutCity;
                     for (Cities city : cities) {
                         if (city == null)
                             continue;
@@ -1051,17 +996,20 @@ public class App {
         }
     }
 
+    /**
+     * Print amount of people, amount of people living in cities and amount of people living outside of cities by country
+     */
 
     public void printPeopleInCitiesAndOutCitiesByCountry(){
         ArrayList<Country> countries = getCountryListByWorld();
-        System.out.println(String.format("%-25s %-25s %-25s %-25s",
-                "Country", "People living in cities", "People not living in cities", ""));
+        System.out.println(String.format("%-50s %-25s %-25s",
+                "Country", "People living in cities", "People not living in cities"));
 
         if(countries.size()>0){
             for (Country country : countries){
                 ArrayList<Cities> cities = getCityListByCountry(country.name);
                 int popCountInCity = 0;
-                int popCountOutCity = 0;
+                int popCountOutCity;
                 for (Cities city : cities) {
                     if (city == null)
                         continue;
@@ -1069,12 +1017,16 @@ public class App {
                 }
                 popCountOutCity = country.population - popCountInCity;
                 String populationData =
-                        String.format("%-25s %-25s %-25s %-25s",
-                                country.name, popCountInCity, popCountOutCity, "");
+                        String.format("%-50s %-25s %-25s",
+                                country.name, popCountInCity, popCountOutCity);
                 System.out.println(populationData);
             }
         }
     }
+
+    /**
+     * Print amount of people, amount of people living in cities and amount of people living outside of cities by Region
+     */
 
     public void printPeopleInCitiesAndOutCitiesByRegion(){
         ArrayList<Region> regions = getRegionList();
@@ -1088,7 +1040,7 @@ public class App {
                 for (Country country : countries) {
                     ArrayList<Cities> cities = getCityListByCountry(country.name);
                     int popCountInCity = 0;
-                    int popCountOutCity = 0;
+                    int popCountOutCity;
                     for (Cities city : cities) {
                         if (city == null)
                             continue;
@@ -1108,6 +1060,10 @@ public class App {
         }
     }
 
+    /**
+     * Print amount of regions // test function
+     */
+
     public void printRegions(ArrayList<Region> regions)
     {
         if (regions == null)
@@ -1121,16 +1077,15 @@ public class App {
             return;
         }
         // Spacing out data for user accessibility
-        System.out.println(String.format("%-50s %-50s",
-                "Region Name", ""));
+        System.out.println("Region Name");
 
-        for(Region rgon : regions)
+        for(Region region : regions)
         {
-            if (rgon == null)
+            if (region == null)
                 continue;
             String country_data =
                     String.format("%-50s %-50s ",
-                            rgon.name, "");
+                            region.name, "");
             System.out.println(country_data);
         }
     }
