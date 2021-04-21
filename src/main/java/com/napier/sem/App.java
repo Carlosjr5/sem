@@ -41,7 +41,7 @@ public class App {
             try
             {
                 // Wait a bit for db to start
-                Thread.sleep(30000);
+                Thread.sleep(0);
                 // Connect to database
                 con = DriverManager.getConnection("jdbc:mysql://" + location + "/world?allowPublicKeyRetrieval=true&useSSL=false", "root", "example");
                 System.out.println("Successfully connected");
@@ -162,17 +162,19 @@ public class App {
 
         //issue N13 - print number of people, living in cities and number of people living outside of cities in each continent
         //a.printPeople(a.getCityListByContinent("Europe"), a.getCountryListByContinent("Europe"));
-        a.printPeopleInCitiesAndOutCitiesByContinent();
+        //a.printPeopleInCitiesAndOutCitiesByContinent();
 
         //issue N12 - print number of people, living in cities and number of people living outside of cities in each region
-        a.printPeopleInCitiesAndOutCitiesByRegion();
+        //a.printPeopleInCitiesAndOutCitiesByRegion();
 
         //issue N11 - print number of people, living in cities and number of people living outside of cities in each country
-        a.printPeopleInCitiesAndOutCitiesByCountry();
+        //a.printPeopleInCitiesAndOutCitiesByCountry();
 
         //Print Regions - Feature added by Vesko - not in coursework requirements
         //a.printRegions(a.getRegionList());
         //may not be included
+
+        a.getPopulation();
 
         // Disconnect from database
         a.disconnect();
@@ -803,6 +805,45 @@ public class App {
                 }
             }
             return people;
+        }
+        catch (Exception e)
+        {
+            System.out.println(e.getMessage());
+            return null;
+        }
+    }
+
+    /**
+     * Get all population
+     */
+    public ArrayList<Country> getPopulation()
+    {
+
+        int count = 0;
+        try
+        {
+            // Make string used for sql statement
+            String strSelect = "SELECT country.code, country.name, country.continent, country.region, country.population" +
+                    " FROM country";
+            PreparedStatement stmt = con.prepareStatement(strSelect);
+
+            // Execute SQL statement
+            ResultSet rset = stmt.executeQuery();
+
+
+            // Creating array list of class country
+            ArrayList<Country> countries  = new ArrayList<>();
+
+
+            // Check one is returned
+            while (rset.next())
+            {
+                Country cntr = new Country();
+                cntr.population = rset.getInt("population");
+                count = count + cntr.population;
+            }
+            System.out.println(count);
+            return countries;
         }
         catch (Exception e)
         {
