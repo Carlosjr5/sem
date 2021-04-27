@@ -175,10 +175,10 @@ public class App {
         //may not be included
 
         // World population
-        a.printPopulationWorld();
+        //a.printPopulationWorld();
 
         // The population of a continent
-        a.printPopulationContinent();
+        //a.printPopulationContinent();
 
         // Disconnect from database
         a.disconnect();
