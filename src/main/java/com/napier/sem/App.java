@@ -1091,15 +1091,17 @@ public class App {
      */
     public void printPopulationContinent() {
         ArrayList<Continent> continents = getContinentList();
-        long population = 0;
+
         if(continents.size()>0){
             for(Continent continent : continents) {
+                long population = 0;
                 ArrayList<Country> countries = getCountryListByContinent(continent.name);
                 for (Country country : countries) {
                     population += country.population;
                 }
+                System.out.println(continent.name + " population is: " + population);
             }
-            System.out.println("World population: " + population);
+
         }
     }
 
