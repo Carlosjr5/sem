@@ -15,7 +15,7 @@ assignees: ''
 
 ### Goal in Context
 
-As an *HR advisor* I want *to produce a report The population of people, people living in cities, and people not living in cities in each country.
+As an *HR advisor* I want *to produce a report of the population of people, people living in cities, and people not living in cities in each country.
 ### Scope
 
 Company.
@@ -30,7 +30,7 @@ Database contains all countries.
 
 ### Success End Condition
 
-A report of the population of people, people living in cities, and people not living in cities in each country is available.
+A report of the population of people living in cities, and people not living in cities in each country is available.
 
 ### Primary Actor
 
@@ -43,7 +43,7 @@ A request for information is sent to HR.
 ## MAIN SUCCESS SCENARIO
 
 1. A request for population of people information is sent out.
-2. HR advisor captures all people living in cities and poeple not living in cities from database in each country.
+2. HR advisor captures all people living in cities and people not living in cities from database in each country.
 3. Report is produced.
 
 ## EXTENSIONS
