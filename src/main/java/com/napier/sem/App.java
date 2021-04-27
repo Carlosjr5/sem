@@ -178,57 +178,10 @@ public class App {
         a.printPopulationWorld();
 
         // The population of a continent
-        //a.printPopulationContinent();
-
-        // The population of a continent
-        a.printPeopleWhoSpeak("Spanish");
-        a.printPeopleWhoSpeak("Chinese");
-        a.printPeopleWhoSpeak("English");
-        a.printPeopleWhoSpeak("Hindi");
-        a.printPeopleWhoSpeak("Arabic");
+        a.printPopulationContinent();
 
         // Disconnect from database
         a.disconnect();
-    }
-
-    /**
-     * Get all countries languages
-     */
-    public ArrayList<CountryLanguage> getCountryLanguageList()
-    {
-
-        try
-        {
-            // Make string used for sql statement
-            String strSelect = "SELECT countrylanguage.countrycode, countrylanguage.language, countrylanguage.isofficial, countrylanguage.percentage" +
-                    " FROM countrylanguage;";
-            PreparedStatement stmt = con.prepareStatement(strSelect);
-
-            // Execute SQL statement
-            ResultSet resultSet = stmt.executeQuery();
-
-
-            // Creating array list of class country
-            ArrayList<CountryLanguage> countryLanguages  = new ArrayList<>();
-
-
-            // Check one is returned
-            while (resultSet.next())
-            {
-                CountryLanguage cntrLang = new CountryLanguage();
-                cntrLang.countryCode = resultSet.getString("countrycode");
-                cntrLang.language = resultSet.getString("language");
-                cntrLang.percentage = resultSet.getInt("percentage");
-                //cntr.name = rset.getString("name");
-                countryLanguages.add(cntrLang);
-            }
-            return countryLanguages;
-        }
-        catch (Exception e)
-        {
-            System.out.println(e.getMessage());
-            return null;
-        }
     }
 
 
@@ -1150,32 +1103,6 @@ public class App {
             }
 
         }
-    }
-
-    /**
-     * Print population of the world
-     */
-
-    public void printPeopleWhoSpeak(String language){
-        ArrayList<Continent> continents = getContinentList();
-        ArrayList<CountryLanguage> countryLanguages = getCountryLanguageList();
-
-        long peopleSpeakingThisLanguage = 0;
-        for(CountryLanguage countryLanguage : countryLanguages){
-            if(countryLanguage.language.equals(language)){
-                for(Continent continent : continents) {
-                    ArrayList<Country> countries = getCountryListByContinent(continent.name);
-                    for (Country country : countries) {
-                        long test=0;
-                        if(countryLanguage.countryCode.equals(country.code))
-                            test = country.population;
-                            peopleSpeakingThisLanguage += test*(countryLanguage.percentage/100);
-                    }
-                }
-            }
-        }
-        System.out.println("People speaking " + language + " - " + peopleSpeakingThisLanguage);
-
     }
 
 
