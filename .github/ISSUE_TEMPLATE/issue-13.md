@@ -1,19 +1,19 @@
 ---
 name: Issue 13
-about: The population of people, people living in cities, and people not living in
-  cities in each continent.
+about: The population of people living in cities, and people not living in cities
+  in each continent.
 title: ''
-labels: ''
+labels: Issue Solved
 assignees: ''
 
 ---
 
-# USE CASE 13: The population of people, people living in cities, and people not living in cities in each continent.
+# USE CASE 13: The population of people living in cities, and people not living in cities in each continent.
 
 ## CHARACTERISTIC INFORMATION
 
 ### Goal in Context
-As an *HR advisor* I want to produce a report of the population of people, people living in cities, and people not living in cities in each continent.
+As an *HR advisor* I want to produce a report of the population of people living in cities, and people not living in cities in each continent.
 ### Scope
 
 Company.
@@ -60,4 +60,5 @@ None.
 
 ## SCHEDULE
 
-**DUE DATE**: Release 1.0
+**DUE DATE**: 30/04/2021
+ Release 1.0

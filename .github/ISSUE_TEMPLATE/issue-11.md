@@ -1,21 +1,21 @@
 ---
 name: Issue 11
-about: The population of people, people living in cities, and people not living in
-  cities in each country.
+about: The population of people living in cities, and people not living in cities
+  in each country.
 title: ''
 labels: Issue Solved
 assignees: ''
 
 ---
 
-# USE CASE 11: Produce a report of the population of people, people living in cities, and people not living in cities in each country.
+# USE CASE 11: Produce a report of the population of people living in cities, and people not living in cities in each country.
 
 ## CHARACTERISTIC INFORMATION
 
 
 ### Goal in Context
 
-As an *HR advisor* I want *to produce a report of the population of people, people living in cities, and people not living in cities in each country.
+As an *HR advisor* I want *to produce a report of the population of people living in cities, and people not living in cities in each country.
 ### Scope
 
 Company.

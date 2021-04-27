@@ -1,20 +1,20 @@
 ---
 name: Issue 12
-about: The population of people, people living in cities, and people not living in
-  cities in each region.
+about: The population of people living in cities, and people not living in cities
+  in each region.
 title: ''
 labels: Issue Solved
 assignees: ''
 
 ---
 
-# USE CASE: 12 The population of people, people living in cities, and people not living in cities in each region.
+# USE CASE: 12 The population of people living in cities, and people not living in cities in each region.
 
 ## CHARACTERISTIC INFORMATION
 
 ### Goal in Context
 
-As an *HR advisor* I want to *produce a report of the population of people in cities, and people not living in cities* in each *region*.
+As an *HR advisor* I want to *produce a report of the population of people living in cities, and people not living in cities* in each *region*.
 
 ### Scope
 
