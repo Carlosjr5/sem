@@ -1,15 +1,17 @@
 ---
 name: Issue 11
-about: Produce a report of all the countries in the world
+about: The population of people, people living in cities, and people not living in
+  cities in each country.
 title: ''
 labels: Issue Solved
 assignees: ''
 
 ---
 
-# USE CASE: Produce a report of all the countries in the world.
+# USE CASE: Produce a report of the population of people, people living in cities, and people not living in cities in each country.
 
 ## CHARACTERISTIC INFORMATION
+
 
 ### Goal in Context
 
@@ -29,7 +31,7 @@ Database contains all countries.
 
 ### Success End Condition
 
-A report of all the countries in the world  is available.
+A report of the population of people, people living in cities, and people not living in cities in each country is available.
 
 ### Primary Actor
 
