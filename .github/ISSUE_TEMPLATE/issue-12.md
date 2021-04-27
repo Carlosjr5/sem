@@ -3,7 +3,7 @@ name: Issue 12
 about: The population of people, people living in cities, and people not living in
   cities.
 title: ''
-labels: ''
+labels: Issue Solved
 assignees: ''
 
 ---
@@ -38,7 +38,7 @@ No population report is produced.
 
 ### Primary Actor
 
-HR Advisor.
+Group 7.
 
 ### Trigger
 
@@ -51,10 +51,6 @@ A request for population data is sent to HR.
 3. A list of people living in cities, and not in cities is produced.
 4. List is sorted according to regions.
 
-## EXTENSIONS
-
-5. **No data**
- Something is wrong with database.
 
 ## SUB-VARIATIONS
 
@@ -62,4 +58,5 @@ None.
 
 ## SCHEDULE
 
-**DUE DATE**: Release 1.0
+**DUE DATE**: 30/04/2021
+ Release 1.0
