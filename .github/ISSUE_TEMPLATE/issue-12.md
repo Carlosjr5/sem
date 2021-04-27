@@ -1,14 +1,14 @@
 ---
 name: Issue 12
 about: The population of people, people living in cities, and people not living in
-  cities.
+  cities in each region.
 title: ''
 labels: Issue Solved
 assignees: ''
 
 ---
 
-# USE CASE: 12 The population of people, people living in cities, and people not living in cities.
+# USE CASE: 12 The population of people, people living in cities, and people not living in cities in each region.
 
 ## CHARACTERISTIC INFORMATION
 
