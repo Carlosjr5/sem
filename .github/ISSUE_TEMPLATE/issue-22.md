@@ -2,7 +2,7 @@
 name: Issue 22
 about: All the cities in a region organised by largest population to smallest.
 title: ''
-labels: ''
+labels: Issue Solved
 assignees: ''
 
 ---
@@ -28,15 +28,11 @@ Database contains city data.
 
 ### Success End Condition
 
-Report of top populated cities is produced.
-
-### Failed End Condition
-
-No report of populated cities is produced.
+Report of all the cities in a region organised by largest population to smallest is produced.
 
 ### Primary Actor
 
-HR Advisor.
+Group 7.
 
 ### Trigger
 
@@ -58,4 +54,6 @@ None.
 
 ## SCHEDULE
 
-**DUE DATE**: Release 1.0
+**DUE DATE**: 30/04/2021
+
+ Release 1.0

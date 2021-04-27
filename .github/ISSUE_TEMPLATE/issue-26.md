@@ -2,7 +2,7 @@
 name: Issue 26
 about: All the cities in a country organised by largest population to smallest.
 title: ''
-labels: ''
+labels: Issue Solved
 assignees: ''
 
 ---
@@ -27,11 +27,7 @@ Database contains city data.
 
 ### Success End Condition
 
-Report of capital city names is produced.
-
-### Failed End Condition
-
-No report of capital city names is produced.
+Report of all the cities in a country organised by largest population to smallest is produced.
 
 ### Primary Actor
 
@@ -56,4 +52,5 @@ None.
 
 ## SCHEDULE
 
-**DUE DATE**: 29/3/2021 Release 1.0
+**DUE DATE**: 30/04/2021
+ Release 1.0

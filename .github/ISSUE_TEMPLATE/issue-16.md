@@ -28,7 +28,7 @@ Database contains city data.
 
 ### Success End Condition
 
-Report is produced.
+Report of the top N populated capital cities in the world is produced.
 
 ### Primary Actor
 

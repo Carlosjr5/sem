@@ -30,11 +30,11 @@ Database contains all the countries in the world organised by largest population
 
 ### Success End Condition
 
-A report is available.
+A report of the top N populated capital cities in a region where N is provided by a user is available.
 
 ### Primary Actor
 
-HR Advisor.
+Group 7.
 
 ### Trigger
 

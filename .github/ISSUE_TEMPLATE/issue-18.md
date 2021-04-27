@@ -28,7 +28,7 @@ Database contains capital city names.
 
 ### Success End Condition
 
-Report is produced.
+Report of all the capital cities in a continent organised by largest population to smallest is produced.
 
 ### Primary Actor
 

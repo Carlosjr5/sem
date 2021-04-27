@@ -30,11 +30,8 @@ Database contains current population data.
 
 ### Success End Condition
 
-Report of people living in cities and outside of cities is produced.
+Report of the population of people living in cities, and people not living in cities in each region is produced.
 
-### Failed End Condition    
-
-No population report is produced.
 
 ### Primary Actor
 

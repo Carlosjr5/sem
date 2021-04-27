@@ -2,7 +2,7 @@
 name: Issue 33
 about: All the countries in a region organised by largest population to smallest.
 title: ''
-labels: ''
+labels: Issue Solved
 assignees: ''
 
 ---
@@ -27,11 +27,7 @@ Database contains country data.
 
 ### Success End Condition
 
-Report of country population numbers in a given region is produced.
-
-### Failed End Condition
-
-No report of country data is produced.
+Report of country population numbers in a given region organised by largest population to smallest is produced.
 
 ### Primary Actor
 
@@ -56,4 +52,6 @@ None.
 
 ## SCHEDULE
 
-**DUE DATE**: 31/3/2021 Release 1.0
+**DUE DATE**: 30/04/2021 
+
+Release 1.0

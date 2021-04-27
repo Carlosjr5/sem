@@ -29,7 +29,7 @@ Database contains all capital cities in a continent.
 
 ### Success End Condition
 
-A report is available.
+A report of the top N populated capital cities in a continent where N is provided by the user is produced.
 
 ### Primary Actor
 

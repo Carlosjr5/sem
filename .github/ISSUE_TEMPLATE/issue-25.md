@@ -2,7 +2,7 @@
 name: Issue 25
 about: All the cities in a district organised by largest population to smallest.
 title: ''
-labels: ''
+labels: Issue Solved
 assignees: ''
 
 ---
@@ -27,15 +27,11 @@ Database contains all the cities in a district.
 
 ### Success End Condition
 
-A report is available.
-
-### Failed End Condition
-
-No report is produced.
+A report of all the cities in a district organised by largest population to smallest is available.
 
 ### Primary Actor
 
-HR Advisor.
+Group 7
 
 ### Trigger
 
@@ -58,4 +54,6 @@ None.
 
 ## SCHEDULE
 
-**DUE DATE**: Release 1.0
+**DUE DATE**:30/04/2021
+
+ Release 1.0

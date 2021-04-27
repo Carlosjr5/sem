@@ -2,7 +2,7 @@
 name: Issue 31
 about: The top N populated countries in a continent where N is provided by the user.
 title: ''
-labels: ''
+labels: Issue Solved
 assignees: ''
 
 ---
@@ -30,15 +30,11 @@ Database contains the top N populated countries in a continent.
 
 ### Success End Condition
 
-A report is available.
-
-### Failed End Condition
-
-No report is produced.
+A report of the top populated countries in a continent is available.
 
 ### Primary Actor
 
-HR Advisor.
+Group 7
 
 ### Trigger
 
@@ -61,4 +57,6 @@ None.
 
 ## SCHEDULE
 
-**DUE DATE**: Release 1.0
+**DUE DATE**: 30/04/2021
+
+ Release 1.0

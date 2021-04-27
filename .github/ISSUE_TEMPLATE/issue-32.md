@@ -2,7 +2,7 @@
 name: Issue 32
 about: The top N populated countries in the world where N is provided by the user.
 title: ''
-labels: ''
+labels: Issue Solved
 assignees: ''
 
 ---
@@ -27,12 +27,7 @@ Database contains country data.
 
 ### Success End Condition
 
-Report of countries names is produced.
-
-### Failed End Condition
-
-No report of capital city names is produced.
-The number provided exceeds the number of countries.
+Report of the top N populated countries in the world is produced.
 
 ### Primary Actor
 
@@ -57,4 +52,4 @@ None.
 
 ## SCHEDULE
 
-**DUE DATE**:4/4/2021 Release 1.0
+**DUE DATE**: 30/04/2021 Release 1.0

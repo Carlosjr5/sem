@@ -38,7 +38,7 @@ No report is produced.
 
 ### Primary Actor
 
-HR Advisor.
+Group 7.
 
 ### Trigger
 

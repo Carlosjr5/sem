@@ -2,7 +2,7 @@
 name: Issue 34
 about: All the countries in a continent organised by largest population to smallest.
 title: ''
-labels: ''
+labels: Issue Solved
 assignees: ''
 
 ---
@@ -27,11 +27,7 @@ Database contains countries data.
 
 ### Success End Condition
 
-Report of countries names is produced.
-
-### Failed End Condition
-
-No report of country's names is produced.
+Report of all the countries in a continent organised by largest population to smallest is produced.
 
 ### Primary Actor
 
@@ -56,4 +52,6 @@ None.
 
 ## SCHEDULE
 
-**DUE DATE**:6/4/2021 Release 1.0
+**DUE DATE**: 30/04/2021 
+
+Release 1.0

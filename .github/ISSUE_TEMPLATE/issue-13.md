@@ -28,15 +28,11 @@ Database contains current population of people, people living in cities, and peo
 
 ### Success End Condition
 
-A report is available 
-
-### Failed End Condition
-
-No report is produced.
+A report of the population of people living in cities, and people not living in cities in each continent is available 
 
 ### Primary Actor
 
-HR Advisor
+Group 7
 
 ### Trigger
 

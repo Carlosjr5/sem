@@ -28,11 +28,11 @@ Database contains city data.
 
 ### Success End Condition
 
-Report is produced.
+Report of all the capital cities in the world organised by largest population to smallest is produced.
 
 ### Primary Actor
 
-HR Advisor.
+Group 7
 
 ### Trigger
 

@@ -2,7 +2,7 @@
 name: Issue 30
 about: The top N populated countries in a region where N is provided by the user.
 title: ''
-labels: ''
+labels: Issue Solved
 assignees: ''
 
 ---
@@ -29,10 +29,6 @@ Database contains country data.
 
 Report of country population numbers in a given region is produced.
 
-### Failed End Condition
-
-No report of country data is produced.
-
 ### Primary Actor
 
 Group 7
@@ -56,4 +52,6 @@ None.
 
 ## SCHEDULE
 
-**DUE DATE**: 31/3/2021 Release 1.0
+**DUE DATE**: 30/04/2021
+
+ Release 1.0
