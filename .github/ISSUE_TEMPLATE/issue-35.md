@@ -2,7 +2,7 @@
 name: Issue 35
 about: The top N populated capital cities in a region where N is provided by the user.
 title: ''
-labels: documentation
+labels: Issue Solved
 assignees: ''
 
 ---
@@ -32,10 +32,6 @@ Database contains all the countries in the world organised by largest population
 
 A report is available.
 
-### Failed End Condition
-
-No report is produced.
-
 ### Primary Actor
 
 HR Advisor.
@@ -61,4 +57,5 @@ None.
 
 ## SCHEDULE
 
-**DUE DATE**: Release 1.0
+**DUE DATE**:30/04/2021
+ Release 1.0

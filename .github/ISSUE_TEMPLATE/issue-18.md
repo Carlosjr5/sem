@@ -2,7 +2,7 @@
 name: Issue 18
 about: All the capital cities in a continent organised by largest population to smallest.
 title: ''
-labels: ''
+labels: Issue Solved
 assignees: ''
 
 ---
@@ -29,10 +29,6 @@ Database contains capital city names.
 ### Success End Condition
 
 Report of capital city names is produced.
-
-### Failed End Condition
-
-No report of capital city names is produced.
 
 ### Primary Actor
 

@@ -2,7 +2,7 @@
 name: Issue 11
 about: Produce a report of all the countries in the world
 title: ''
-labels: ''
+labels: Issue Solved
 assignees: ''
 
 ---
@@ -29,11 +29,7 @@ Database contains all countries.
 
 ### Success End Condition
 
-A report is available.
-
-### Failed End Condition
-
-No report is produced.
+A report of all the countries in the world  is available.
 
 ### Primary Actor
 
