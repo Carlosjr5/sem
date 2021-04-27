@@ -2,7 +2,7 @@
 name: Issue 20
 about: The top N populated cities in a district where N is provided by the user.
 title: ''
-labels: ''
+labels: Issue Solved
 assignees: ''
 
 ---
@@ -28,11 +28,7 @@ Database contains city data.
 
 ### Success End Condition
 
-Report of capital city names is produced.
-
-### Failed End Condition
-
-No report of capital city names is produced.
+Report is produced.
 
 ### Primary Actor
 
@@ -57,4 +53,6 @@ None.
 
 ## SCHEDULE
 
-**DUE DATE**: 20/3/2021 Release 1.0
+**DUE DATE**: 30/04/2021
+
+ Release 1.0

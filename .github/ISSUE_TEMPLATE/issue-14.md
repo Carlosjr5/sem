@@ -2,7 +2,7 @@
 name: Issue 14
 about: The top N populated capital cities in a region
 title: ''
-labels: ''
+labels: Issue Solved
 assignees: ''
 
 ---
@@ -29,15 +29,11 @@ Database contains city data.
 
 ### Success End Condition
 
-Report of top N populated cities is produced.
-
-### Failed End Condition
-
-No population report is produced.
+Report of top N populated capital cities in a region is produced.
 
 ### Primary Actor
 
-HR Advisor.
+Group 7.
 
 ### Trigger
 
@@ -62,4 +58,6 @@ None.
 
 ## SCHEDULE
 
-**DUE DATE**: Release 1.0
+**DUE DATE**: 30/04/2021
+
+ Release 1.0

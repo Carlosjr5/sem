@@ -3,7 +3,7 @@ name: Issue 15
 about: The top N populated capital cities in a continent where N is provided by the
   user.
 title: ''
-labels: ''
+labels: Issue Solved
 assignees: ''
 
 ---
@@ -31,13 +31,9 @@ Database contains all capital cities in a continent.
 
 A report is available.
 
-### Failed End Condition
-
-No report is produced.
-
 ### Primary Actor
 
-HR Advisor.
+Group 7
 
 ### Trigger
 
@@ -60,4 +56,6 @@ None.
 
 ## SCHEDULE
 
-**DUE DATE**: Release 1.0
+**DUE DATE**: 30/04/2021.
+
+Release 1.0

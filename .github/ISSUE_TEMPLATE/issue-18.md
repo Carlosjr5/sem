@@ -28,11 +28,11 @@ Database contains capital city names.
 
 ### Success End Condition
 
-Report of capital city names is produced.
+Report is produced.
 
 ### Primary Actor
 
-HR Advisor.
+Group 7.
 
 ### Trigger
 
@@ -53,4 +53,6 @@ None.
 
 ## SCHEDULE
 
-**DUE DATE**: Release 1.0
+**DUE DATE**: 30/04/2021
+
+Release 1.0

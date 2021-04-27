@@ -2,7 +2,7 @@
 name: Issue 19
 about: All the capital cities in the world organised by largest population to smallest.
 title: ''
-labels: ''
+labels: Issue Solved
 assignees: ''
 
 ---
@@ -28,11 +28,7 @@ Database contains city data.
 
 ### Success End Condition
 
-Report of capital city names is produced.
-
-### Failed End Condition
-
-No report of capital city names is produced.
+Report is produced.
 
 ### Primary Actor
 
@@ -57,4 +53,5 @@ None.
 
 ## SCHEDULE
 
-**DUE DATE**: Release 1.0
+**DUE DATE**: 30/04/2021
+ Release 1.0

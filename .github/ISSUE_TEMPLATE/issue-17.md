@@ -31,10 +31,6 @@ We know the table. Database contains current cities information.
 
 A report is available to find out which cities are the largest in the selected region.
 
-### Failed End Condition
-
-No report is produced.
-
 ### Primary Actor
 
 Group 7.
@@ -58,4 +54,5 @@ None.
 
 ## SCHEDULE
 
-**DUE DATE**: Release 1.0
+**DUE DATE**: 30/04/2021
+Release 1.0
