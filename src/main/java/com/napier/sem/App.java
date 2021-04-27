@@ -3,7 +3,6 @@ package com.napier.sem;
 import java.lang.*;
 import java.sql.*;
 import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Main function for start of application
@@ -175,17 +174,13 @@ public class App {
         //may not be included
 
         // World population
-        a.printPopulationWorld();
+        //a.printPopulationWorld();
 
         // The population of a continent
         //a.printPopulationContinent();
 
         // The population of a continent
-        a.printPeopleWhoSpeak("Spanish");
-        a.printPeopleWhoSpeak("Chinese");
-        a.printPeopleWhoSpeak("English");
-        a.printPeopleWhoSpeak("Hindi");
-        a.printPeopleWhoSpeak("Arabic");
+        a.printPeopleWhoSpeak();
 
         // Disconnect from database
         a.disconnect();
@@ -220,7 +215,6 @@ public class App {
                 cntrLang.countryCode = resultSet.getString("countrycode");
                 cntrLang.language = resultSet.getString("language");
                 cntrLang.percentage = resultSet.getInt("percentage");
-                //cntr.name = rset.getString("name");
                 countryLanguages.add(cntrLang);
             }
             return countryLanguages;
@@ -231,11 +225,64 @@ public class App {
             return null;
         }
     }
+
+    /**
+     * Print population of the world who speak
+     */
+    public void printPeopleWhoSpeak(){
+        long populationWorld = printPopulationWorld();
+        double [] peopleSpeakingThisLang = new double[5];
+
+        double chinese = printPeopleWhoSpeak("Chinese");
+        peopleSpeakingThisLang[0] = chinese;
+        double english = printPeopleWhoSpeak("English");
+        peopleSpeakingThisLang[1] = english;
+        double hindi = printPeopleWhoSpeak("Hindi");
+        peopleSpeakingThisLang[2] = hindi;
+        double spanish = printPeopleWhoSpeak("Spanish");
+        peopleSpeakingThisLang[3]  = spanish;
+        double arabic = printPeopleWhoSpeak("Arabic");
+        peopleSpeakingThisLang[4]  = arabic;
+
+        double temporary;
+        for (int i = 1; i < peopleSpeakingThisLang.length; i++) {
+            for (int k = i; k > 0; k--) {
+                if (peopleSpeakingThisLang[k] < peopleSpeakingThisLang [k - 1]) {
+                    temporary = peopleSpeakingThisLang[k];
+                    peopleSpeakingThisLang[k] = peopleSpeakingThisLang[k - 1];
+                    peopleSpeakingThisLang[k - 1] = temporary;
+                }//end if loop
+            }//end for loop
+        }//end for loop
+
+        for(int x = peopleSpeakingThisLang.length - 1; x >= 0; x--){
+            double percentage = (peopleSpeakingThisLang[x]/populationWorld) * 100;
+            double roundPercentage = (double) Math.round(percentage * 100) / 100;
+
+            if(peopleSpeakingThisLang[x]==chinese){
+                System.out.println((int) chinese + " people speak chinese, which is "
+                        + roundPercentage + "% of World population");
+            } else if (peopleSpeakingThisLang[x]==english){
+                System.out.println((int)english + " people speak english, which is "
+                        + roundPercentage + "% of World population");
+            } else if(peopleSpeakingThisLang[x]==hindi){
+                System.out.println((int) hindi + " people speak hindi, which is "
+                        + roundPercentage + "% of World population");
+            } else if (peopleSpeakingThisLang[x]==spanish){
+                System.out.println((int) spanish + " people speak spanish, which is "
+                        + roundPercentage + "% of World population");
+            } else if (peopleSpeakingThisLang[x]==arabic){
+                System.out.println((int) arabic + " people speak arabic, which is "
+                        + roundPercentage + "% of World population");
+            }
+        }//end for loop
+    }//end method
+
     /**
      * Print population of the world
      */
 
-    public void printPeopleWhoSpeak(String language){
+    public long printPeopleWhoSpeak(String language){
         ArrayList<Continent> continents = getContinentList();
         ArrayList<CountryLanguage> countryLanguages = getCountryLanguageList();
 
@@ -253,7 +300,7 @@ public class App {
                 }
             }
         }
-        System.out.println("People speaking " + language + " - " + peopleSpeakingThisLanguage);
+        return peopleSpeakingThisLanguage;
 
     }
 
@@ -1144,7 +1191,7 @@ public class App {
      * Print population of the world
      */
 
-    public void printPopulationWorld(){
+    public long printPopulationWorld(){
         ArrayList<Continent> continents = getContinentList();
         long population = 0;
         if(continents.size()>0){
@@ -1156,6 +1203,7 @@ public class App {
             }
             System.out.println("World population: " + population);
         }
+        return population;
     }
 
     /**
