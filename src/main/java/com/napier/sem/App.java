@@ -183,7 +183,14 @@ public class App {
         // The population of a region
         //a.printPopulationRegion("Melanesia");
 
-        a.printPopulationCountry("Bulgaria");
+        // The population of a country
+        //a.printPopulationCountry("Bulgaria");
+
+        // The population of a district
+        //a.printPopulationDictrict("Grad Sofija");
+
+        // The population of a city
+        a.printPopulationCity("Sofija");
 
         // Disconnect from database
         a.disconnect();
@@ -1127,6 +1134,7 @@ public class App {
         }
     }
 
+
     /**
      * Print population of country
      */
@@ -1146,10 +1154,52 @@ public class App {
             System.out.println(cntr + " population is: " + population);
         }
     }
+
+
+    /**
+     * Print population of district
+     */
+    public void printPopulationDictrict(String distr) {
+        ArrayList<Cities> cities = getCityListByDistrict(distr);
+
+        long population = 0;
+
+        if(cities.size()>0){
+            for (Cities city : cities) {
+                if (city.district.equals(distr))
+                {
+                    population += city.population;
+                    break;
+                }
+            }
+            System.out.println(distr + " population is: " + population);
+        }
+    }
+
+
+    /**
+     * Print population of district
+     */
+    public void printPopulationCity(String ctname) {
+        ArrayList<Cities> cities = getCityListByWorld();
+
+        long population = 0;
+
+        if(cities.size()>0){
+            for (Cities city : cities) {
+                if (city.name.equals(ctname))
+                {
+                    population += city.population;
+                    break;
+                }
+            }
+            System.out.println(ctname + " population is: " + population);
+        }
+    }
+
     /**
      * Print amount of regions // test function
      */
-
     public void printRegions(ArrayList<Region> regions)
     {
         if (regions == null)
