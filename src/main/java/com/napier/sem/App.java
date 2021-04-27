@@ -119,7 +119,7 @@ public class App {
         //a.printCities(a.getCityListByContinent("Europe"));
 
         //issue N27 - print cities by region
-        //a.printCities(a.getCityListByRegion("Caribbean"));
+        a.printCities(a.getCityListByRegion("Melanesia"));
 
         //issue N26 - print cities by country
         //a.printCities(a.getCityListByCountry("Argentina"));
@@ -179,6 +179,8 @@ public class App {
 
         // The population of a continent
         //a.printPopulationContinent();
+
+        a.printPopulationRegion("Melanesia");
 
         // Disconnect from database
         a.disconnect();
@@ -1007,7 +1009,6 @@ public class App {
     /**
      * Print amount of people, amount of people living in cities and amount of people living outside of cities by country
      */
-
     public void printPeopleInCitiesAndOutCitiesByCountry(){
         ArrayList<Country> countries = getCountryListByWorld();
         System.out.println(String.format("%-50s %-25s %-25s",
@@ -1071,7 +1072,6 @@ public class App {
     /**
      * Print population of the world
      */
-
     public void printPopulationWorld(){
         ArrayList<Continent> continents = getContinentList();
         long population = 0;
@@ -1106,6 +1106,23 @@ public class App {
     }
 
 
+    /**
+     * Print population of the region
+     */
+    public void printPopulationRegion(String reg) {
+        ArrayList<Region> regions = getRegionList();
+
+        long population = 0;
+
+        if(regions.size()>0){
+                ArrayList<Cities> cities = getCityListByRegion(reg);
+                for (Cities city : cities) {
+                    population += city.population;
+
+            }
+            System.out.println(reg + " population is: " + population);
+        }
+    }
 
     /**
      * Print amount of regions // test function
