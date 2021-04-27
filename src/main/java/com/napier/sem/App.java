@@ -174,11 +174,16 @@ public class App {
         //a.printRegions(a.getRegionList());
         //may not be included
 
-        a.getPopulation();
+        // World population
+        a.printPopulationWorld();
+
+        // The population of a continent
+        a.printPopulationContinent();
 
         // Disconnect from database
         a.disconnect();
     }
+
 
 
     /**
@@ -813,44 +818,6 @@ public class App {
         }
     }
 
-    /**
-     * Get all population
-     */
-    public ArrayList<Country> getPopulation()
-    {
-
-        int count = 0;
-        try
-        {
-            // Make string used for sql statement
-            String strSelect = "SELECT country.code, country.name, country.continent, country.region, country.population" +
-                    " FROM country";
-            PreparedStatement stmt = con.prepareStatement(strSelect);
-
-            // Execute SQL statement
-            ResultSet rset = stmt.executeQuery();
-
-
-            // Creating array list of class country
-            ArrayList<Country> countries  = new ArrayList<>();
-
-
-            // Check one is returned
-            while (rset.next())
-            {
-                Country cntr = new Country();
-                cntr.population = rset.getInt("population");
-                count = count + cntr.population;
-            }
-            System.out.println(count);
-            return countries;
-        }
-        catch (Exception e)
-        {
-            System.out.println(e.getMessage());
-            return null;
-        }
-    }
 
 
     /**
@@ -1102,6 +1069,43 @@ public class App {
     }
 
     /**
+     * Print population of the world
+     */
+
+    public void printPopulationWorld(){
+        ArrayList<Continent> continents = getContinentList();
+        long population = 0;
+        if(continents.size()>0){
+            for(Continent continent : continents) {
+                ArrayList<Country> countries = getCountryListByContinent(continent.name);
+                for (Country country : countries) {
+                    population += country.population;
+                }
+            }
+            System.out.println("World population: " + population);
+        }
+    }
+
+    /**
+     * Print population of the continent
+     */
+    public void printPopulationContinent() {
+        ArrayList<Continent> continents = getContinentList();
+        long population = 0;
+        if(continents.size()>0){
+            for(Continent continent : continents) {
+                ArrayList<Country> countries = getCountryListByContinent(continent.name);
+                for (Country country : countries) {
+                    population += country.population;
+                }
+            }
+            System.out.println("World population: " + population);
+        }
+    }
+
+
+
+    /**
      * Print amount of regions // test function
      */
 
@@ -1130,7 +1134,6 @@ public class App {
             System.out.println(country_data);
         }
     }
-
 
 
 }
