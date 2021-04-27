@@ -119,7 +119,7 @@ public class App {
         //a.printCities(a.getCityListByContinent("Europe"));
 
         //issue N27 - print cities by region
-        a.printCities(a.getCityListByRegion("Melanesia"));
+        //a.printCities(a.getCityListByRegion("Melanesia"));
 
         //issue N26 - print cities by country
         //a.printCities(a.getCityListByCountry("Argentina"));
@@ -180,7 +180,10 @@ public class App {
         // The population of a continent
         //a.printPopulationContinent();
 
-        a.printPopulationRegion("Melanesia");
+        // The population of a region
+        //a.printPopulationRegion("Melanesia");
+
+        a.printPopulationCountry("Bulgaria");
 
         // Disconnect from database
         a.disconnect();
@@ -1124,6 +1127,25 @@ public class App {
         }
     }
 
+    /**
+     * Print population of country
+     */
+    public void printPopulationCountry(String cntr) {
+        ArrayList<Country> countries = getCountryListByWorld();
+
+        long population = 0;
+
+        if(countries.size()>0){
+            for (Country country : countries) {
+                if (country.name.equals(cntr))
+                {
+                    population += country.population;
+                    break;
+                }
+            }
+            System.out.println(cntr + " population is: " + population);
+        }
+    }
     /**
      * Print amount of regions // test function
      */
