@@ -77,6 +77,7 @@ public class App {
         }
     }
 
+    public static int popCount = 0;
 
     public static void main(String args[]) throws SQLException {
         // Create new Application
@@ -174,7 +175,7 @@ public class App {
         //a.printRegions(a.getRegionList());
         //may not be included
 
-        a.getPopulation();
+        System.out.println(popCount);
 
         // Disconnect from database
         a.disconnect();
@@ -212,6 +213,7 @@ public class App {
             cntr.population = rset.getInt("population");
             cntr.name = rset.getString("name");
             countries.add(cntr);
+            popCount = popCount + cntr.population;
         }
         return countries;
     }
