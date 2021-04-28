@@ -2,7 +2,7 @@
 name: Issue 36
 about: The population of the world.
 title: ''
-labels: Issue Not Solved
+labels: Issue Solved
 assignees: ''
 
 ---
@@ -30,11 +30,7 @@ Database contains the population of the world.
 
 ### Success End Condition
 
-A report is available.
-
-### Failed End Condition
-
-No report is produced.
+A report the population of the world is available.
 
 ### Primary Actor
 

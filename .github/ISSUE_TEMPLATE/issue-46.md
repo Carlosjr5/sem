@@ -2,7 +2,7 @@
 name: Issue 46
 about: Number of people who speak Arabic.
 title: ''
-labels: Issue Not Solved
+labels: Issue Solved
 assignees: ''
 
 ---
@@ -30,15 +30,11 @@ Database contains the number of people who speak Arabic.
 
 ### Success End Condition
 
-A report is available.
-
-### Failed End Condition
-
-No report is produced.
+A report  of number of people who speak Arabic is available.
 
 ### Primary Actor
 
-HR Advisor.
+Group 7.
 
 ### Trigger
 

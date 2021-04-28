@@ -2,7 +2,7 @@
 name: Issue 40
 about: The population of a district.
 title: ''
-labels: Issue Not Solved
+labels: Issue Solved
 assignees: ''
 
 ---
@@ -30,15 +30,11 @@ Database contains the population of a district.
 
 ### Success End Condition
 
-A report is available.
-
-### Failed End Condition
-
-No report is produced.
+A report the population of a district is available.
 
 ### Primary Actor
 
-HR Advisor.
+Group 7.
 
 ### Trigger
 
