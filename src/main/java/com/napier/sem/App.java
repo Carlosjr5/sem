@@ -186,7 +186,7 @@ public class App {
         //a.printPopulationCountry("Bulgaria");
 
         // The population of a district
-        //a.printPopulationDictrict("Grad Sofija");
+        //a.printPopulationDistrict("Grad Sofija");
 
         // The population of a city
         //a.printPopulationCity("Sofija");
@@ -1281,7 +1281,7 @@ public class App {
     /**
      * Print population of district
      */
-    public void printPopulationDictrict(String distr) {
+    public void printPopulationDistrict(String distr) {
         ArrayList<Cities> cities = getCityListByDistrict(distr);
 
         long population = 0;
