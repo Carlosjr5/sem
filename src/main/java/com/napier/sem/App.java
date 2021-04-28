@@ -6,7 +6,7 @@ import java.util.ArrayList;
 
 /**
  * Main function for start of application
- * last edited by Veselin Zanev at 20:15 AM 4.20.2021
+ * last edited by Angel Tenev at 10:42 AM 4.28.2021
  */
 //Main class for connecting to a local database
 public class App {
