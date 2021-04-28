@@ -2,7 +2,7 @@
 name: Issue 43
 about: Number of people who speak English.
 title: ''
-labels: Issue Not Solved
+labels: Issue Solved
 assignees: ''
 
 ---
@@ -30,15 +30,11 @@ Database contains the number of people who speak English.
 
 ### Success End Condition
 
-A report is available.
-
-### Failed End Condition
-
-No report is produced.
+A report of the number of people who speak English is available.
 
 ### Primary Actor
 
-HR Advisor.
+Group 7.
 
 ### Trigger
 

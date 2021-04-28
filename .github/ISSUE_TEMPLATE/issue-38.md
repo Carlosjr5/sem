@@ -2,7 +2,7 @@
 name: Issue 38
 about: The population of a region.
 title: ''
-labels: Issue Not Solved
+labels: Issue Solved
 assignees: ''
 
 ---
@@ -30,15 +30,12 @@ Database contains the population of a region.
 
 ### Success End Condition
 
-A report is available.
+A report the population of a region is available.
 
-### Failed End Condition
-
-No report is produced.
 
 ### Primary Actor
 
-HR Advisor.
+Group 7.
 
 ### Trigger
 

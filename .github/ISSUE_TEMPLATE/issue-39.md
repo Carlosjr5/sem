@@ -2,7 +2,7 @@
 name: Issue 39
 about: The population of a country.
 title: ''
-labels: Issue Not Solved
+labels: Issue Solved
 assignees: ''
 
 ---
@@ -34,11 +34,11 @@ A report is available.
 
 ### Failed End Condition
 
-No report is produced.
+No report the population of a country is produced.
 
 ### Primary Actor
 
-HR Advisor.
+Group 7
 
 ### Trigger
 
