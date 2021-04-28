@@ -179,8 +179,20 @@ public class App {
         // The population of a continent
         //a.printPopulationContinent();
 
+        // The population of a region
+        //a.printPopulationRegion("Melanesia");
+
+        // The population of a country
+        //a.printPopulationCountry("Bulgaria");
+
+        // The population of a district
+        //a.printPopulationDictrict("Grad Sofija");
+
+        // The population of a city
+        //a.printPopulationCity("Sofija");
+
         // The population of a continent
-        a.printPeopleWhoSpeak();
+        //a.printPeopleWhoSpeak();
 
         // Disconnect from database
         a.disconnect();
@@ -1225,6 +1237,87 @@ public class App {
         }
     }
 
+
+    /**
+     * Print population of the region
+     */
+    public void printPopulationRegion(String reg) {
+        ArrayList<Region> regions = getRegionList();
+
+        long population = 0;
+
+        if(regions.size()>0){
+            ArrayList<Cities> cities = getCityListByRegion(reg);
+            for (Cities city : cities) {
+                population += city.population;
+
+            }
+            System.out.println(reg + " population is: " + population);
+        }
+    }
+
+
+    /**
+     * Print population of country
+     */
+    public void printPopulationCountry(String cntr) {
+        ArrayList<Country> countries = getCountryListByWorld();
+
+        long population = 0;
+
+        if(countries.size()>0){
+            for (Country country : countries) {
+                if (country.name.equals(cntr))
+                {
+                    population += country.population;
+                    break;
+                }
+            }
+            System.out.println(cntr + " population is: " + population);
+        }
+    }
+
+
+    /**
+     * Print population of district
+     */
+    public void printPopulationDictrict(String distr) {
+        ArrayList<Cities> cities = getCityListByDistrict(distr);
+
+        long population = 0;
+
+        if(cities.size()>0){
+            for (Cities city : cities) {
+                if (city.district.equals(distr))
+                {
+                    population += city.population;
+                    break;
+                }
+            }
+            System.out.println(distr + " population is: " + population);
+        }
+    }
+
+
+    /**
+     * Print population of city
+     */
+    public void printPopulationCity(String ctname) {
+        ArrayList<Cities> cities = getCityListByWorld();
+
+        long population = 0;
+
+        if(cities.size()>0){
+            for (Cities city : cities) {
+                if (city.name.equals(ctname))
+                {
+                    population += city.population;
+                    break;
+                }
+            }
+            System.out.println(ctname + " population is: " + population);
+        }
+    }
 
 
     /**
