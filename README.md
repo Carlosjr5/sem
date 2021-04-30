@@ -33,9 +33,10 @@
 |28|The population of a region.                                                                             |Yes| ![alt text](https://github.com/Carlosjr5/sem/blob/master/screenshots/id28.png)|
 |29|The population of a country.                                                                             |Yes| ![alt text](https://github.com/Carlosjr5/sem/blob/master/screenshots/id29.png)|
 |30|The population of a district.                                                                             |Yes| ![alt text](https://github.com/Carlosjr5/sem/blob/master/screenshots/id30.png)|
-|31|The population of a city.                                                      |Yes| ![alt text](https://github.com/Carlosjr5/sem/blob/master/screenshots/id31.png)|
+|31|The population of a city.                                                                                 |Yes| ![alt text](https://github.com/Carlosjr5/sem/blob/master/screenshots/id31.png)|
 |32|The number of people who speak Chinese.                                                     |Yes| ![alt text](https://github.com/Carlosjr5/sem/blob/master/screenshots/id32.png)|
-|33|The number of people who speak English.                                                       |Yes| ![alt text](https://github.com/Carlosjr5/sem/blob/master/screenshots/id33.png)|
-|34|The number of people who speak Hindi.                                                         |Yes| ![alt text](https://github.com/Carlosjr5/sem/blob/master/screenshots/id34.png)|
-|35|The number of people who speak Spanish.                                                         |Yes| ![alt text](https://github.com/Carlosjr5/sem/blob/master/screenshots/id35.png)|
+|33|The number of people who speak English.                                                       |Yes| ![alt text](https://github.com/Carlosjr5/sem/blob/master/screenshots/id35.png)|
+|34|The number of people who speak Hindi.                                                         |Yes| ![alt text]
+(https://github.com/Carlosjr5/sem/blob/master/screenshots/id33.png)|
+|35|The number of people who speak Spanish.                                                         |Yes| ![alt text]  (https://github.com/Carlosjr5/sem/blob/master/screenshots/id34.png)|
 |36|The number of people who speak Arabic.                                                         |Yes| ![alt text](https://github.com/Carlosjr5/sem/blob/master/screenshots/id36.png)|
