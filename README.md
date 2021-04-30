@@ -1,10 +1,9 @@
 [![Build Status](https://www.travis-ci.com/Carlosjr5/sem.svg?branch=master)](https://www.travis-ci.com/Carlosjr5/sem)
 [![LICENSE](https://img.shields.io/github/license/Carlosjr5/sem.svg?style=flat-square)](https://github.com/Carlosjr5/sem/blob/master/LICENSE)
 [![Releases](https://img.shields.io/github/release/Carlosjr5/sem/all.svg?style=flat-square)](https://github.com/Carlosjr5/sem/releases)
-![alt text](https://github.com/Carlosjr5/sem/blob/master/screenshots/id1.png?raw=true) 
 |         ID  |Name                           |Met                          | Image  |
-|-------------|-------------------------------|-----------------------------|--------|
-|1 |All the countries in the world organised by largest population to smallest.  |Yes| | 
+|-------------|-------------------------------|-----------------------------|---------------------------------------------------------------------------------------------|
+|1 |All the countries in the world organised by largest population to smallest.  |Yes| | ![alt text](https://github.com/Carlosjr5/sem/blob/master/screenshots/id1.png?raw=true) 
 |2 |All the countries in a continent organised by largest population to smallest.|Yes| | IMAGE 
 |3 |All the countries in a region organised by largest population to smallest.   |Yes| | IMAGE
 |4 |The top N populated countries in the world where N is provided by the user.  |Yes| |
