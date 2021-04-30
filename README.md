@@ -3,7 +3,7 @@
 [![Releases](https://img.shields.io/github/release/Carlosjr5/sem/all.svg?style=flat-square)](https://github.com/Carlosjr5/sem/releases)
 |         ID  |Name                           |Met                          | Image                                                                                            |
 |-------------|-------------------------------|-----------------------------|--------------------------------------------------------------------------------------------------|
-|1 |All the countries in the world organised by largest population to smallest.  |Yes| | ![alt text](https://github.com/Carlosjr5/sem/blob/master/screenshots/id1.png?raw=true) {#id .class width=30 height=20px}
+|1 |All the countries in the world organised by largest population to smallest.  |Yes| | ![alt text](https://github.com/Carlosjr5/sem/blob/master/screenshots/id1.png)
 |2 |All the countries in a continent organised by largest population to smallest.|Yes| | IMAGE 
 |3 |All the countries in a region organised by largest population to smallest.   |Yes| | IMAGE
 |4 |The top N populated countries in the world where N is provided by the user.  |Yes| |
