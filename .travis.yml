@@ -34,7 +34,7 @@ jobs:
         - mvn package -DskipTests=true -Dmaven.javadoc.skip=true
       before_deploy:
         # Set up git user name and tag this commit
-        - git config --local user.name "Carlos Pederasos"
+        - git config --local user.name "Angel Pederasos"
         - git config --local user.email "40444294@napier.ac.uk"
         # Create temporary tag from date and Git log.
         - export TRAVIS_TAG=${TRAVIS_TAG:-$(date +'%Y-%m-%d')-$(git log --format=%h -1)}
